@@ -29,12 +29,12 @@ module.exports = {
 			successGlobal: "Préfixe global changé: %1",
 			successThisThread: "Préfixe du groupe changé: %1",
 
-			// 🔥 TON STYLE ICI 🔥
 			myPrefix:
-`࿇ ══━━✥🔥✥━━══ ࿇
-🔥 sʏsᴛᴇᴍ ᴘʀᴇғɪx: %1
-💥 ʏᴏᴜʀ ʙᴏᴛ ᴄʜᴀᴛ ᴘʀᴇғɪx: %2
-࿇ ══━━✥🔥✥━━══ ࿇`
+`
+┅┅┅┅┅┅┅༻❁༺┅┅┅┅┅┅┅
+⚙️ 𝑺𝒚𝒔𝒕𝒆̀𝒎𝒆 : %1 ┃
+💬 𝑮𝒓𝒐𝒖𝒑𝒆 : %2 ┃
+┅┅┅┅┅┅┅༻❁༺┅┅┅┅┅┅`
 		}
 	},
 
@@ -90,16 +90,22 @@ module.exports = {
 		}
 	},
 
-	onChat: async function ({ event, message, getLang }) {
+	onChat: async function ({ event, message, getLang, usersData }) {
 		if (event.body && event.body.toLowerCase() === "prefix") {
-			return () => {
-				return message.reply(
-					getLang(
+			return async () => {
+
+				const uid = event.senderID;
+				let avatar = await usersData.getAvatarUrl(uid).catch(() => null);
+				if (!avatar) avatar = "https://i.imgur.com/TPHk4Qu.png";
+
+				return message.reply({
+					body: getLang(
 						"myPrefix",
 						global.GoatBot.config.prefix,
 						utils.getPrefix(event.threadID)
-					)
-				);
+					),
+					attachment: await global.utils.getStreamFromURL(avatar)
+				});
 			};
 		}
 	}
