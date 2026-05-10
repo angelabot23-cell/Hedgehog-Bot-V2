@@ -1,106 +1,96 @@
 const axios = require("axios");
 const fs = require("fs-extra");
 const path = require("path");
-const { getPrefix } = global.utils;
-
-// 🌸 CADRE STYLE
-function neo(text) {
-	return `
-•┈┈┈••✦ ♡ ✦••┈┈┈•
-
-🌸 ${text}
-
-•┈┈┈••✦ ♡ ✦••┈┈┈•
-`;
-}
 
 module.exports = {
-	config: {
-		name: "welcome",
-		version: "3.1",
-		author: "Saimx69x x Célestin 👑",
-		category: "events"
-	},
+  config: {
+    name: "welcome",
+    version: "2.1",
+    author: "Saimx69x + Celestin",
+    category: "events"
+  },
 
-	onStart: async function ({ api, event }) {
-		if (event.logMessageType !== "log:subscribe") return;
+  onStart: async function ({ api, event }) {
+    if (event.logMessageType !== "log:subscribe") return;
 
-		const { threadID, logMessageData } = event;
-		const { addedParticipants } = logMessageData;
+    const { threadID, logMessageData } = event;
+    const newUsers = logMessageData.addedParticipants;
+    const botID = api.getCurrentUserID();
 
-		const prefix = getPrefix(threadID);
-		const botID = api.getCurrentUserID();
+    const threadInfo = await api.getThreadInfo(threadID);
+    const groupName = threadInfo.threadName;
+    const memberCount = threadInfo.participantIDs.length;
 
-		// 🔥 NOM DU BOT
-		let botName = "BOT";
-		try {
-			const botInfo = await api.getUserInfo(botID);
-			botName = botInfo[botID]?.name || "BOT";
-		} catch {}
+    // 🤖 SI C’EST LE BOT QUI EST AJOUTÉ → PRÉSENTATION
+    if (newUsers.some(u => u.userFbId === botID)) {
+      return api.sendMessage(
+`━━━━━━ ◦ ❖ ◦ ━━━━━━
+🤖 𝐁𝐎𝐓 𝐂𝐎𝐍𝐍𝐄𝐂𝐓𝐄́
 
-		// 🤖 BOT JOIN
-		if (addedParticipants.some(u => u.userFbId === botID)) {
-			return api.sendMessage(
-				neo(
-`🤖 BOT ACTIVÉ
+👋 Salut tout le monde !
+Je viens d'être ajouté dans ce groupe 😎
 
-👑 ${botName} est maintenant prêt
-💠 Préfixe : ${prefix}
+✨ Je suis votre assistant :
+📌 Commandes
+🎮 Jeux
+🤖 IA
+⚙️ Outils utiles
 
-✨ Mode : Actif
-🔥 Disponible pour vos commandes`
-				),
-				threadID
-			);
-		}
+💡 Tape "help" pour voir mes commandes
 
-		// 👤 USER JOIN
-		const threadInfo = await api.getThreadInfo(threadID);
-		const groupName = threadInfo.threadName;
-		const memberCount = threadInfo.participantIDs.length;
+❤️ Merci de m'avoir ajouté !
+━━━━━━ ◦ ❖ ◦ ━━━━━━`,
+        threadID
+      );
+    }
 
-		for (const user of addedParticipants) {
-			const userId = user.userFbId;
-			const name = user.fullName;
+    // 👥 NOUVEAUX MEMBRES
+    for (const user of newUsers) {
+      const userId = user.userFbId;
+      const fullName = user.fullName;
 
-			try {
-				const time = new Date().toLocaleString("fr-FR");
+      try {
+        const timeStr = new Date().toLocaleString("en-BD", {
+          timeZone: "Asia/Dhaka",
+          hour: "2-digit", minute: "2-digit", second: "2-digit",
+          weekday: "long", year: "numeric", month: "2-digit", day: "2-digit",
+          hour12: true,
+        });
 
-				// IMAGE API
-				const apiUrl = `https://xsaim8x-xxx-api.onrender.com/api/welcome?name=${encodeURIComponent(name)}&uid=${userId}&threadname=${encodeURIComponent(groupName)}&members=${memberCount}`;
+        const apiUrl = `https://xsaim8x-xxx-api.onrender.com/api/welcome?name=${encodeURIComponent(fullName)}&uid=${userId}&threadname=${encodeURIComponent(groupName)}&members=${memberCount}`;
 
-				const cacheDir = path.join(__dirname, "..", "cache");
-				await fs.ensureDir(cacheDir);
+        const tmp = path.join(__dirname, "..", "cache");
+        await fs.ensureDir(tmp);
+        const imagePath = path.join(tmp, `welcome_${userId}.png`);
 
-				const imgPath = path.join(cacheDir, `welcome_${userId}.png`);
+        const response = await axios.get(apiUrl, { responseType: "arraybuffer" });
+        fs.writeFileSync(imagePath, response.data);
 
-				const res = await axios.get(apiUrl, { responseType: "arraybuffer" });
-				fs.writeFileSync(imgPath, res.data);
+        await api.sendMessage({
+          body:
+`━━━━━━ ◦ ❖ ◦ ━━━━━━
+🎉 𝐁𝐈𝐄𝐍𝐕𝐄𝐍𝐔𝐄 ${fullName} !
 
-				// MESSAGE
-				await api.sendMessage({
-					body: neo(
-`👋 BIENVENUE ${name}
+💬 Tu viens de rejoindre :
+📌 ${groupName}
 
-🏷️ Groupe : ${groupName}
-👥 Membres : ${memberCount}
+👥 Tu es le membre n° ${memberCount}
 
-🤖 Bot : ${botName}
+✨ Nous sommes ravis de t'accueillir ici !
+🤝 N'hésite pas à discuter et t'amuser avec nous
 
-💬 Respect • Fun • Bonne ambiance
-🔥 Tu es maintenant membre officiel
+━━━━━━━━━━━━━━━━
+📅 ${timeStr}
+━━━━━━ ◦ ❖ ◦ ━━━━━━`,
+          attachment: fs.createReadStream(imagePath),
+          mentions: [{ tag: fullName, id: userId }]
+        }, threadID);
 
-🕒 ${time}`
-					),
-					attachment: fs.createReadStream(imgPath),
-					mentions: [{ tag: name, id: userId }]
-				}, threadID);
+        fs.unlinkSync(imagePath);
 
-				fs.unlinkSync(imgPath);
-
-			} catch (err) {
-				console.log("❌ welcome error:", err);
-			}
-		}
-	}
+      } catch (err) {
+        console.error("❌ Error sending welcome message:", err);
+      }
+    }
+  }
 };
