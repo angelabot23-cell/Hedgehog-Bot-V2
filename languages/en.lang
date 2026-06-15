@@ -1,19 +1,19 @@
 # index.js
-Goat.newVersionDetected=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚠️ Vous utilisez la version %1, la dernière version est %2.\n» Veuillez mettre à jour en tapant : %3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+Goat.newVersionDetected=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚠️ 𝑽𝒐𝒖𝒔 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒛 𝒍𝒂 𝒗𝒆𝒓𝒔𝒊𝒐𝒏 %1, 𝒍𝒂 𝒅𝒆𝒓𝒏𝒊𝒆̀𝒓𝒆 𝒗𝒆𝒓𝒔𝒊𝒐𝒏 𝒆𝒔𝒕 %2.\n» 𝑽𝒆𝒖𝒊𝒍𝒍𝒆𝒛 𝒎𝒆𝒕𝒕𝒓𝒆 𝒂̀ 𝒋𝒐𝒖𝒓 𝒆𝒏 𝒕𝒂𝒑𝒂𝒏𝒕 : %3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 Goat.autoRestart1=Le bot redémarrera automatiquement dans %1
 Goat.autoRestart2=Le bot redémarrera automatiquement via le cron job : %1
-Goat.googleApiTokenExpired=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Le token de rafraîchissement Google API a expiré ou a été révoqué.\n» Obtenez-en un nouveau : https://developers.google.com/oauthplayground/\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+Goat.googleApiTokenExpired=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑳𝒆 𝒕𝒐𝒌𝒆𝒏 𝒅𝒆 𝒓𝒂𝒇𝒓𝒂𝒊̂𝒄𝒉𝒊𝒔𝒔𝒆𝒎𝒆𝒏𝒕 𝑮𝒐𝒐𝒈𝒍𝒆 𝑨𝑷𝑰 𝒂 𝒆𝒙𝒑𝒊𝒓𝒆́ 𝒐𝒖 𝒂 𝒆́𝒕𝒆́ 𝒓𝒆́𝒗𝒐𝒒𝒖𝒆́.\n» 𝑶𝒃𝒕𝒆𝒏𝒆𝒛-𝒆𝒏 𝒖𝒏 𝒏𝒐𝒖𝒗𝒆𝒂𝒖 : https://developers.google.com/oauthplayground/\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 
 # bot/login/login.js
 login.currentlyLogged=Connexion en cours
-login.notFoundDirAccount=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Impossible de trouver le fichier %1\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.notFoundDirAccount=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑰𝒎𝒑𝒐𝒔𝒔𝒊𝒃𝒍𝒆 𝒅𝒆 𝒕𝒓𝒐𝒖𝒗𝒆𝒓 𝒍𝒆 𝒇𝒊𝒄𝒉𝒊𝒆𝒓 %1\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 login.loginToken=Connexion avec un access token
 login.loginCookieString=Connexion avec un cookie string
 login.loginCookieNetscape=Connexion avec un cookie netscape
 login.loginCookieArray=Connexion avec un cookie array
 login.loginPassword=Connexion avec email et mot de passe...
-login.accountError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Erreur de configuration de compte.\n» Format attendu : %1 ou %2 dans le fichier %7\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-login.cannotFindAccount=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Impossible de trouver un compte Facebook.\n» Choisissez une option ci-dessous :\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.accountError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑬𝒓𝒓𝒆𝒖𝒓 𝒅𝒆 𝒄𝒐𝒏𝒇𝒊𝒈𝒖𝒓𝒂𝒕𝒊𝒐𝒏 𝒅𝒆 𝒄𝒐𝒎𝒑𝒕𝒆.\n» 𝑭𝒐𝒓𝒎𝒂𝒕 𝒂𝒕𝒕𝒆𝒏𝒅𝒖 : %1 𝒐𝒖 %2 𝒅𝒂𝒏𝒔 𝒍𝒆 𝒇𝒊𝒄𝒉𝒊𝒆𝒓 %7\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.cannotFindAccount=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑰𝒎𝒑𝒐𝒔𝒔𝒊𝒃𝒍𝒆 𝒅𝒆 𝒕𝒓𝒐𝒖𝒗𝒆𝒓 𝒖𝒏 𝒄𝒐𝒎𝒑𝒕𝒆 𝑭𝒂𝒄𝒆𝒃𝒐𝒐𝒌.\n» 𝑪𝒉𝒐𝒊𝒔𝒊𝒔𝒔𝒆𝒛 𝒖𝒏𝒆 𝒐𝒑𝒕𝒊𝒐𝒏 𝒄𝒊-𝒅𝒆𝒔𝒔𝒐𝒖𝒔 :\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 login.chooseAccount=Connexion avec email et mot de passe
 login.chooseToken=Connexion avec token full permission
 login.chooseCookieString=Connexion avec cookie string
@@ -26,99 +26,99 @@ login.inputToken=> Veuillez entrer votre token full permission (commence par EAA
 login.inputCookieString=> Veuillez entrer votre cookie string :
 login.inputCookieArray=> Veuillez entrer votre cookie array :
 login.refreshCookie=Actualisation du cookie...
-login.refreshCookieError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Une erreur est survenue lors de l’actualisation du cookie\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.refreshCookieError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑼𝒏𝒆 𝒆𝒓𝒓𝒆𝒖𝒓 𝒆𝒔𝒕 𝒔𝒖𝒓𝒗𝒆𝒏𝒖𝒆 𝒍𝒐𝒓𝒔 𝒅𝒆 𝒍’𝒂𝒄𝒕𝒖𝒂𝒍𝒊𝒔𝒂𝒕𝒊𝒐𝒏 𝒅𝒖 𝒄𝒐𝒐𝒌𝒊𝒆\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 login.refreshCookieSuccess=Cookie actualisé avec succès, redémarrez le bot pour utiliser le nouveau cookie
-login.refreshCookieWarning=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚠️ Mode d’auto-actualisation activé sans email/mot de passe dans config.json\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-login.tokenError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Le token est invalide ou expiré.\n» Utilisez le format %1 dans le fichier %2\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-login.cookieError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Le cookie est invalide ou expiré.\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-login.loginPasswordError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Erreur lors de la connexion avec email & mot de passe dans config.json\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.refreshCookieWarning=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚠️ 𝑴𝒐𝒅𝒆 𝒅’𝒂𝒖𝒕𝒐-𝒂𝒄𝒕𝒖𝒂𝒍𝒊𝒔𝒂𝒕𝒊𝒐𝒏 𝒂𝒄𝒕𝒊𝒗𝒆́ 𝒔𝒂𝒏𝒔 𝒆𝒎𝒂𝒊𝒍/𝒎𝒐𝒕 𝒅𝒆 𝒑𝒂𝒔𝒔𝒆 𝒅𝒂𝒏𝒔 𝒄𝒐𝒏𝒇𝒊𝒈.𝒋𝒔𝒐𝒏\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.tokenError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑳𝒆 𝒕𝒐𝒌𝒆𝒏 𝒆𝒔𝒕 𝒊𝒏𝒗𝒂𝒍𝒊𝒅𝒆 𝒐𝒖 𝒆𝒙𝒑𝒊𝒓𝒆́.\n» 𝑼𝒕𝒊𝒍𝒊𝒔𝒆𝒛 𝒍𝒆 𝒇𝒐𝒓𝒎𝒂𝒕 %1 𝒅𝒂𝒏𝒔 𝒍𝒆 𝒇𝒊𝒄𝒉𝒊𝒆𝒓 %2\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.cookieError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑳𝒆 𝒄𝒐𝒐𝒌𝒊𝒆 𝒆𝒔𝒕 𝒊𝒏𝒗𝒂𝒍𝒊𝒅𝒆 𝒐𝒖 𝒆𝒙𝒑𝒊𝒓𝒆́.\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.loginPasswordError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑬𝒓𝒓𝒆𝒖𝒓 𝒍𝒐𝒓𝒔 𝒅𝒆 𝒍𝒂 𝒄𝒐𝒏𝒏𝒆𝒙𝒊𝒐𝒏 𝒂𝒗𝒆𝒄 𝒆𝒎𝒂𝒊𝒍 & 𝒎𝒐𝒕 𝒅𝒆 𝒑𝒂𝒔𝒔𝒆 𝒅𝒂𝒏𝒔 𝒄𝒐𝒏𝒇𝒊𝒈.𝒋𝒔𝒐𝒏\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 login.loginSuccess=Connexion réussie
-login.loginError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Une erreur est survenue lors de la connexion\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.loginError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑼𝒏𝒆 𝒆𝒓𝒓𝒆𝒖𝒓 𝒆𝒔𝒕 𝒔𝒖𝒓𝒗𝒆𝒏𝒖𝒆 𝒍𝒐𝒓𝒔 𝒅𝒆 𝒍𝒂 𝒄𝒐𝒏𝒏𝒆𝒙𝒊𝒐𝒏\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 login.openDashboardSuccess=Page de gestion du bot ouverte avec succès
-login.openDashboardError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Une erreur est survenue lors de l’ouverture de la page de gestion\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-login.changeGbanData=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ LES DONNÉES ONT ÉTÉ MODIFIÉES, IMPOSSIBLE DE LANCER LE BOT\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-login.errorNoti=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Une erreur est survenue lors de la récupération du message\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.openDashboardError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑼𝒏𝒆 𝒆𝒓𝒓𝒆𝒖𝒓 𝒆𝒔𝒕 𝒔𝒖𝒓𝒗𝒆𝒏𝒖𝒆 𝒍𝒐𝒓𝒔 𝒅𝒆 𝒍’𝒐𝒖𝒗𝒆𝒓𝒕𝒖𝒓𝒆 𝒅𝒆 𝒍𝒂 𝒑𝒂𝒈𝒆 𝒅𝒆 𝒈𝒆𝒔𝒕𝒊𝒐𝒏\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.changeGbanData=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑳𝑬𝑺 𝑫𝑶𝑵𝑵𝑬́𝑬𝑺 𝑶𝑵𝑻 𝑬́𝑻𝑬́ 𝑴𝑶𝑫𝑰𝑭𝑰𝑬́𝑬𝑺, 𝑰𝑴𝑷𝑶𝑺𝑺𝑰𝑩𝑳𝑬 𝑫𝑬 𝑳𝑨𝑵𝑪𝑬𝑹 𝑳𝑬 𝑩𝑶𝑻\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.errorNoti=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑼𝒏𝒆 𝒆𝒓𝒓𝒆𝒖𝒓 𝒆𝒔𝒕 𝒔𝒖𝒓𝒗𝒆𝒏𝒖𝒆 𝒍𝒐𝒓𝒔 𝒅𝒆 𝒍𝒂 𝒓𝒆́𝒄𝒖𝒑𝒆́𝒓𝒂𝒕𝒊𝒐𝒏 𝒅𝒖 𝒎𝒆𝒔𝒔𝒂𝒈𝒆\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 login.refreshFbstateSuccess=Le fichier %1 a été actualisé
-login.refreshFbstateError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Une erreur est survenue lors de l’actualisation du fichier %1\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-login.youAreBanned=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Vous avez été banni du projet Goat-Bot\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-login.checkGbanError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Erreur de vérification GBAN. Lancez la commande : node update\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-login.gbanMessage=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n🚫 Vous avez été banni du projet Goat-Bot le %1\n» Raison : %2\n» Heure : %3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-login.gbanMessageToDate=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n🚫 Vous avez été banni du projet Goat-Bot le %1\n» Raison : %2\n» Heure : %3\n» Jusqu’à : %4\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-login.gbanAdminMessage=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n🚫 L’utilisateur %1 a été banni du projet Goat-Bot le %2\n» Raison : %3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.refreshFbstateError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑼𝒏𝒆 𝒆𝒓𝒓𝒆𝒖𝒓 𝒆𝒔𝒕 𝒔𝒖𝒓𝒗𝒆𝒏𝒖𝒆 𝒍𝒐𝒓𝒔 𝒅𝒆 𝒍’𝒂𝒄𝒕𝒖𝒂𝒍𝒊𝒔𝒂𝒕𝒊𝒐𝒏 𝒅𝒖 𝒇𝒊𝒄𝒉𝒊𝒆𝒓 %1\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.youAreBanned=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑽𝒐𝒖𝒔 𝒂𝒗𝒆?? 𝒆́𝒕𝒆́ 𝒃𝒂𝒏𝒏𝒊 𝒅𝒖 𝒑𝒓𝒐𝒋𝒆𝒄𝒕 𝑮𝒐𝒂𝒕-𝑩𝑶𝑻\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.checkGbanError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑬𝒓𝒓𝒆𝒖𝒓 𝒅𝒆 𝒗𝒆́𝒓𝒊𝒇𝒊𝒄𝒂𝒕𝒊𝒐𝒏 𝑮𝑩𝑨𝑵. 𝑳𝒂𝒏𝒄𝒆𝒛 𝒍𝒂 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒆 : 𝒏𝒐𝒅𝒆 𝒖𝒑𝒅𝒂𝒕𝒆\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.gbanMessage=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n🚫 𝑽𝒐𝒖𝒔 𝒂𝒗𝒆𝒛 𝒆́𝒕𝒆́ 𝒃𝒂𝒏𝒏𝒊 𝒅𝒖 𝒑𝒓𝒐𝒋𝒆𝒄𝒕 𝑮𝒐𝒂𝒕-𝑩𝒐𝒕 𝒍𝒆 %1\n» 𝑹𝒂𝒊𝒔𝒐𝒏 : %2\n» 𝑯𝒆𝒖𝒓𝒆 : %3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.gbanMessageToDate=node✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n🚫 𝑽𝒐𝒖𝒔 𝒂𝒗𝒆𝒛 𝒆́𝒕𝒆́ 𝒃𝒂𝒏𝒏𝒊 𝒅𝒖 𝒑𝒓𝒐𝒋𝒆𝒄𝒕 𝑮𝒐𝒂𝒕-𝑩𝒐𝒕 𝒍𝒆 %1\n» 𝑹𝒂𝒊𝒔𝒐𝒏 : %2\n» 𝑯𝒆𝒖𝒓𝒆 : %3\n» 𝑱𝒖𝒔𝒒𝒖’𝒂̀ : %4\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.gbanAdminMessage=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n🚫 𝑳’𝒖𝒕𝒊𝒍𝒊𝒔𝒂𝒕𝒆𝒖𝒓 %1 𝒂 𝒆́𝒕𝒆́ 𝒃𝒂𝒏𝒏𝒊 𝒅𝒖 𝒑𝒓𝒐𝒋𝒆𝒄𝒕 𝑮𝒐𝒂𝒕-𝑩𝒐𝒕 𝒍𝒆 %2\n» 𝑹𝒂𝒊𝒔𝒐𝒏 : %3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 login.openServerUptimeSuccess=🚀 Serveur uptime ouvert : %1
-login.openServerUptimeError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Une erreur est survenue, impossible d’ouvrir le serveur uptime\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.openServerUptimeError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑼𝒏𝒆 𝒆𝒓𝒓𝒆𝒖𝒓 𝒆𝒔𝒕 𝒔𝒖𝒓𝒗𝒆𝒏𝒖𝒆, 𝒊𝒎𝒑𝒐𝒔𝒔𝒊𝒃𝒍𝒆 𝒅’𝒐𝒖𝒗𝒓𝒊𝒓 𝒍𝒆 𝒔𝒆𝒓𝒗𝒆𝒖𝒓 𝒖𝒑𝒕𝒊𝒎𝒆\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 login.restartListenMessage=Redémarrage ListenMQTT activé toutes les %1
 login.stopRestartListenMessage=Redémarrage ListenMQTT désactivé
-login.restartListenMessageError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Une erreur est survenue lors du redémarrage de ListenMQTT\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.restartListenMessageError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑼𝒏𝒆 𝒆𝒓𝒓𝒆𝒖𝒓 𝒆𝒔𝒕 𝒔𝒖𝒓𝒗𝒆𝒏𝒖𝒆 𝒍𝒐𝒓𝒔 𝒅𝒆 𝒍𝒂 𝒓𝒆𝒍𝒂𝒏𝒄𝒆 𝒅𝒆 𝑳𝒊𝒔𝒕𝒆𝒏𝑴𝑸𝑻\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 login.restartListenMessage2=ListenMQTT redémarré avec succès
 login.refreshCookieAfter=Actualisation du cookie après %1
 login.listenMqttClose=ListenMQTT fermé
 login.listenMqttCloseByUser=ListenMQTT fermé par l’utilisateur
-login.retryCheckLiveCookie=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚠️ Nouvelle tentative de vérification du cookie... %1\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+login.retryCheckLiveCookie=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚠️ 𝑵𝒐𝒖𝒗𝒆𝒍𝒍𝒆 𝒕𝒆𝒏𝒕𝒂𝒕𝒊𝒗𝒆 𝒅𝒆 𝒗𝒆́𝒓𝒊𝒇𝒊𝒄𝒂𝒕𝒊𝒐𝒏 𝒅𝒖 𝒄𝒐𝒐𝒌𝒊𝒆... %1\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 login.startBotSuccess=Le bot a démarré avec succès, commence la réception des messages des utilisateurs
 
-version.tooOldVersion=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Vous utilisez une version trop ancienne de Goat-Bot.\n» Mettez à jour avec la commande : %1\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+version.tooOldVersion=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑽𝒐𝒖𝒔 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒛 𝒖𝒏𝒆 𝒗𝒆𝒓𝒔𝒊𝒐𝒏 𝒕𝒓𝒐𝒑 𝒂𝒏𝒄𝒊𝒆𝒏𝒏𝒆 𝒅𝒆 𝑮𝒐𝒂𝒕-𝑩𝒐𝒕.\n» 𝑴𝒆𝒕𝒕𝒆𝒛 𝒂̀ 𝒋𝒐𝒖𝒓 𝒂𝒗𝒆𝒄 𝒍𝒂 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒆 : %1\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 
 # bot/custom.js
 custom.refreshedFb_dtsg=fb_dtsg et jazoest actualisés avec succès
-custom.refreshedFb_dtsgError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Une erreur est survenue lors de l’actualisation de fb_dtsg et jazoest\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+custom.refreshedFb_dtsgError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑼𝒏𝒆 𝒆𝒓𝒓𝒆𝒖𝒓 𝒆𝒔𝒕 𝒔𝒖𝒓𝒗𝒆𝒏𝒖𝒆 𝒍𝒐𝒓𝒔 𝒅𝒆 𝒍’𝒂𝒄𝒕𝒖𝒂𝒍𝒊𝒔𝒂𝒕𝒊𝒐𝒏 𝒅𝒆 𝒇𝒃_𝒅𝒕𝒔𝒈 𝒆𝒕 𝒋𝒂𝒛𝒐𝒆𝒔𝒕\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 
 # bot/login/loadData.js
 loadData.loadThreadDataSuccess=Données du groupe %1 chargées avec succès !
 loadData.loadUserDataSuccess=Données de l’utilisateur %1 chargées avec succès !
 loadData.refreshingThreadData=Mise à jour des informations des groupes...
 loadData.refreshThreadDataSuccess=Informations de %1 groupe mises à jour !
-loadData.refreshThreadDataError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Une erreur est survenue lors de la mise à jour des groupes\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+loadData.refreshThreadDataError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑼𝒏𝒆 𝒆𝒓𝒓𝒆𝒖𝒓 𝒆𝒔𝒕 𝒔𝒖𝒓𝒗𝒆𝒏𝒖𝒆 𝒍𝒐𝒓𝒔 𝒅𝒆 𝒍𝒂 𝒎𝒊𝒔𝒆 𝒂̀ 𝒋𝒐𝒖𝒓 𝒅𝒆𝒔 𝒈𝒓𝒐𝒖𝒑𝒆𝒔\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 
 # bot/login/loadScripts.js
-loadScripts.loadScriptsError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Les fichiers %1 ont provoqué une erreur lors du chargement :\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-loadScripts.loadScriptsNotMatchOrigin=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚠️ Les fichiers %1 ne correspondent pas au GitHub officiel.\n» Vérifiez la fiabilité de vos commandes :\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+loadScripts.loadScriptsError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑳𝒆𝒔 𝒇𝒊𝒄𝒉𝒊𝒆𝒓𝒔 %1 𝒐𝒏𝒕 𝒑𝒓𝒐𝒗𝒐𝒒𝒖𝒆́ 𝒖𝒏𝒆 𝒆𝒓𝒓𝒆𝒖𝒓 𝒍𝒐𝒓𝒔 𝒅𝒖 𝒄𝒉𝒂𝒓𝒈𝒆𝒎𝒆𝒏𝒕 :\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+loadScripts.loadScriptsNotMatchOrigin=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚠️ 𝑳𝒆𝒔 𝒇𝒊𝒄𝒉𝒊𝒆𝒓𝒔 %1 𝒏𝒆 𝒄𝒐𝒓𝒓𝒆𝒔𝒑𝒐𝒏𝒅𝒆𝒏𝒕 𝒑𝒂𝒔 𝒂𝒖 𝑮𝒊𝒕𝑈𝒉𝒖𝒃 𝒐𝒇𝒇𝒊𝒄𝒊𝒆𝒍.\n» 𝑽𝒆́𝒓𝒊𝒇𝒊𝒆𝒛 𝒍𝒂 𝒇𝒊𝒂𝒃𝒊𝒍𝒊𝒕𝒆́ 𝒅𝒆 𝒗𝒐𝒔 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒆𝒔 :\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 loadScripts.NOT_FOUND=NON TROUVÉ DANS LE CODE SOURCE ORIGINAL :
 loadScripts.NOT_MATCH=NE CORRESPOND PAS AU CODE SOURCE ORIGINAL :
 
 # bot/login/socketIO.js
 socketIO.connected=Connecté au serveur socket.io
-socketIO.error=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Une erreur est survenue lors de la connexion au serveur socket.io\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+socketIO.error=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑼𝒏𝒆 𝒆𝒓𝒓𝒆𝒖𝒓 𝒆𝒔𝒕 𝒔𝒖𝒓𝒗𝒆𝒏𝒖𝒆 𝒍𝒐𝒓𝒔 𝒅𝒆 𝒍𝒂 𝒄𝒐𝒏𝒏𝒆𝒙𝒊𝒐𝒏 𝒂𝒖 𝒔𝒆𝒓𝒗𝒆𝒖𝒓 𝒔𝒐𝒄𝒌𝒆𝒕.𝒊𝒐\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 
 # bot/handler/handlerCheckData.js
-handlerCheckData.cantCreateThread=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Les groupes avec l’ID '%1' ne peuvent pas être écrits en BDD\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerCheckData.cantCreateUser=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Les utilisateurs avec l’ID '%1' ne peuvent pas être écrits en BDD\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerCheckData.cantCreateThread=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑳𝒆𝒔 𝒈𝒓𝒐𝒖𝒑𝒆𝒔 𝒂𝒗𝒆𝒄 𝒍’𝑰𝑫 '%1' 𝒏𝒆 𝒑𝒆𝒖𝒗𝒆𝒏𝒕 𝒑𝒂𝒔 𝒆̂𝒕𝒓𝒆 𝒆́𝒄𝒓𝒊𝒕𝒔 𝒆𝒏 𝑩𝑫𝑫\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerCheckData.cantCreateUser=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑳𝒆𝒔 𝒖𝒕𝒊𝒍𝒊𝒔𝒂𝒕𝒆𝒖𝒓𝒔 𝒂𝒗𝒆𝒄 𝒍’𝑰𝑫 '%1' 𝒏𝒆 𝒑𝒆𝒖𝒗𝒆𝒏𝒕 𝒑𝒂𝒔 𝒆̂𝒕𝒓𝒆 𝒆́𝒄𝒓𝒊𝒕𝒔 𝒆𝒏 𝑩𝑫𝑫\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 
 # bot/handler/handlerEvents.js
-handlerEvents.userBanned=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n🚫 𝐕𝐨𝐮𝐬 𝐚𝐯𝐞𝐳 𝐞́𝐭𝐞́ 𝐛𝐚𝐧𝐧𝐢 𝐝𝐮 𝐛𝐨𝐭\n» 𝐑𝐚𝐢𝐬𝐨𝐧 : %1\n» 𝐇𝐞𝐮𝐫𝐞 : %2\n» 𝐈𝐃 𝐔𝐭𝐢𝐥𝐢𝐬𝐚𝐭𝐞𝐮𝐫 : %3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.threadBanned=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n🚫 𝐂𝐞 𝐠𝐫𝐨𝐮𝐩𝐞 𝐚 𝐞́𝐭𝐞́ 𝐛𝐚𝐧𝐧𝐢 𝐝𝐮 𝐛𝐨𝐭\n» 𝐑𝐚𝐢𝐬𝐨𝐧 : %1\n» 𝐇𝐞𝐮𝐫𝐞 : %2\n» 𝐈𝐃 𝐆𝐫𝐨𝐮𝐩𝐞 : %3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.onlyAdminBox=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n🔒 𝐂𝐞 𝐠𝐫𝐨𝐮𝐩𝐞 𝐞𝐬𝐭 𝐚𝐜𝐭𝐮𝐞𝐥𝐥𝐞𝐦𝐞𝐧𝐭 𝐫𝐞𝐬𝐞𝐫𝐯𝐞́ 𝐚𝐮𝐱 𝐚𝐝𝐦𝐢𝐧𝐢𝐬𝐭𝐫𝐚𝐭𝐞𝐮𝐫𝐬\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.onlyAdminBot=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ | 𝐒𝐞𝐮𝐥 𝐥’𝐚𝐝𝐦𝐢𝐧 𝐝𝐮 𝐛𝐨𝐭 𝐩𝐞𝐮𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐞 𝐛𝐨𝐭\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.onlyDeveloperGlobal=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚙️ | 𝐒𝐞𝐮𝐥 𝐥𝐞 𝐝𝐞́𝐯𝐞𝐥𝐨𝐩𝐩𝐞𝐮𝐫 𝐝𝐮 𝐛𝐨𝐭 𝐩𝐞𝐮𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐞 𝐛𝐨𝐭\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.onlyVipUserGlobal=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n💎 | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐮𝐬𝐞𝐫𝐬 𝐕𝐈𝐏 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐞 𝐛𝐨𝐭\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.userBanned=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n🚫 𝑽𝒐🇺𝒔 𝒂𝒗𝒆𝒛 𝒆́𝒕𝒆́ 𝒃𝒂𝒏𝒏𝒊 𝒅𝒖 𝒃𝒐𝒕\n» 𝑹𝒂𝒊𝒔𝒐𝒏 : %1\n» 𝑯𝒆𝒖𝒓𝒆 : %2\n» 𝑰𝑫 𝑼𝒕𝒊𝒍𝒊𝒔𝒂𝒕𝒆𝒖𝒓 : %3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.threadBanned=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n🚫 𝑪𝒆 𝒈𝒓𝒐𝒖𝒑𝒆 𝒂 𝒆́𝒕𝒆́ 𝒃𝒂𝒏𝒏𝒊 𝒅𝒖 𝒃𝒐𝒕\n» 𝑹𝒂𝒊𝒔𝒐𝒏 : %1\n» 𝑯𝒆𝒖𝒓𝒆 : %2\n» 𝑰𝑫 𝑮𝒓𝒐𝒖𝒑𝒆 : %3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.onlyAdminBox=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n🔒 𝑪𝒆 𝒈𝒓𝒐𝒖𝒑𝒆 𝒆𝒔𝒕 𝒂𝒄𝒕𝒖𝒆𝒍𝒍𝒆𝒎𝒆𝒃𝒕 𝒓𝒆𝒔𝒆𝒓𝒗𝒆́ 𝒂𝒖𝒙 𝒂𝒅𝒎𝒊𝒏𝒊𝒔𝒕𝒓𝒂𝒕𝒆𝒖𝒓𝒔\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.onlyAdminBot=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ | 𝑺𝒆𝒖𝒍 𝒍’𝒂𝒅𝒎𝒊𝒏 𝒅𝒖 𝒃𝒐𝒕 𝒑𝒆𝒖𝒕 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒓 𝒍𝒆 𝒃𝒐𝒕\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.onlyDeveloperGlobal=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚙️ | 𝑺𝒆𝒖𝒍 𝒍𝒆 𝒅𝒆́𝒗𝒆𝒍𝒐𝒑𝒑𝒆𝒖𝒓 𝒅𝒖 𝒃𝒐𝒕 𝒑𝒆𝒖𝒕 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒓 𝒍𝒆 𝒃𝒐𝒕\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.onlyVipUserGlobal=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n💎 | 𝑺𝒆𝒖𝒍𝒔 𝒍𝒆𝒔 𝒖𝒔𝒆𝒓𝒔 𝑽𝑰𝑷 𝒑𝒆𝒖𝒗𝒆𝒏𝒕 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒓 𝒍𝒆 𝒃𝒐𝒕\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 
-handlerEvents.commandNotFound=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ | 𝐋𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%1" 𝐧’𝐞𝐱𝐢𝐬𝐭𝐞 𝐩𝐚𝐬\n» 𝐓𝐚𝐩𝐞𝐳 %2𝐡𝐞𝐥𝐩 𝐩𝐨𝐮𝐫 𝐯𝐨𝐢𝐫 𝐥𝐞𝐬 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞𝐬\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.commandNotFound2=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ | 𝐋𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 𝐪𝐮𝐞 𝐯𝐨𝐮𝐬 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐳 𝐧’𝐞𝐱𝐢𝐬𝐭𝐞 𝐩𝐚𝐬\n» 𝐓𝐚𝐩𝐞𝐳 %1𝐡𝐞𝐥𝐩 𝐩𝐨𝐮𝐫 𝐚𝐟𝐟𝐢𝐜𝐡𝐞𝐫 𝐥’𝐚𝐢𝐝𝐞\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.commandNotFoundSuggestion=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n🧐 | 𝐋𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 𝐪𝐮𝐞 𝐯𝐨𝐮𝐬 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐳 𝐧’𝐞𝐱𝐢𝐬𝐭𝐞 𝐩𝐚𝐬\n» 𝐕𝐨𝐮𝐥𝐢𝐞𝐳-𝐯𝐨𝐮𝐬 𝐝𝐢𝐫𝐞 : %2%1 ?\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.commandSyntaxError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚠️ | 𝐒𝐲𝐧𝐭𝐚𝐱𝐞 𝐢𝐧𝐜𝐨𝐫𝐫𝐞𝐜𝐭𝐞\n» 𝐓𝐚𝐩𝐞𝐳 %1𝐡𝐞𝐥𝐩 %2 𝐩𝐨𝐮𝐫 𝐯𝐨𝐢𝐫 𝐥𝐞 𝐠𝐮𝐢𝐝𝐞 𝐝’𝐮𝐭𝐢𝐥𝐢𝐬𝐚𝐭𝐢𝐨𝐧\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.commandNotFound=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ | 𝑳𝒂 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒆 "%1" 𝒏’𝒆𝒙𝒊𝒔𝒕𝒆 𝒑𝒂𝒔\n» 𝑻𝒂𝒑𝒆𝒛 %2𝒉𝒆𝒍𝒑 𝒑𝒐𝒖𝒓 𝒗𝒐𝒊𝒓 𝒍𝒆𝒔 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒆𝒔\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.commandNotFound2=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ | 𝑳𝒂 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒆 𝒒𝒖𝒆 𝒗𝒐🇺𝒔 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒛 𝒏’𝒆𝒙𝒊𝒔𝒕𝒆 𝒑𝒂𝒔\n» 𝑻𝒂𝒑𝒆𝒛 %1𝒉𝒆𝒍𝒑 𝒑𝒐𝒖𝒓 𝒂𝒇𝒇𝒊𝒄𝒉𝒆𝒓 𝒍’𝒂𝒊𝒅𝒆\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.commandNotFoundSuggestion=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n🧐 | 𝑳𝒂 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒆 𝒒𝒖𝒆 𝒗𝒐🇺𝒔 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒛 𝒏’𝒆𝒙𝒊𝒔𝒕𝒆 𝒑𝒂𝒔\n» 𝑽𝒐𝒖𝒍𝒊𝒆𝒛-𝒗𝒐𝒖𝒔 𝒅𝒊𝒓𝒆 : %2%1 ?\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.commandSyntaxError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚠️ | 𝑺𝒚𝒏𝒕𝒂𝒙𝒆 𝒊𝒏𝒄𝒐𝒓𝒓𝒆𝒄𝒕𝒆\n» 𝑻𝒂𝒑𝒆𝒛 %1𝒉𝒆𝒍𝒑 %2 𝒑𝒐𝒖𝒓 𝒗𝒐𝒊𝒓 𝒍𝒆 𝒈𝒖𝒊𝒅𝒆 𝒅’𝒖𝒕𝒊𝒍𝒊𝒔𝒂𝒕𝒊𝒐𝒏\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 
-handlerEvents.onlyAdmin=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐚𝐝𝐦𝐢𝐧𝐬 𝐝𝐮 𝐠𝐫𝐨𝐮𝐩𝐞 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.onlyAdminToUseOnReply=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐚𝐝𝐦𝐢𝐧𝐬 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐫𝐞𝐩𝐨𝐧𝐬𝐞 𝐝𝐞 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.onlyAdminToUseOnReaction=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐚𝐝𝐦𝐢𝐧𝐬 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐫𝐞𝐚𝐜𝐭𝐢𝐨𝐧 𝐝𝐞 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.onlyAdminBot2=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n💫 | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐮𝐬𝐞𝐫𝐬 𝐕𝐈𝐏 𝐞𝐭 𝐩𝐥𝐮𝐬 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.onlyAdminBot2ToUseOnReply=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n💫 | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐮𝐬𝐞𝐫𝐬 𝐕𝐈𝐏 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐫𝐞𝐩𝐨𝐧𝐬𝐞 𝐝𝐞 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.onlyAdminBot2ToUseOnReaction=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n💫 | 𝐒𝐞𝐮𝐥𝐬 𝐥𝐞𝐬 𝐮𝐬𝐞𝐫𝐬 𝐕𝐈𝐏 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐫𝐞𝐚𝐜𝐭𝐢𝐨𝐧 𝐝𝐞 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.onlyDeveloper=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚙️ | 𝐒𝐞𝐮𝐥 𝐥𝐞 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐩𝐞𝐮𝐫 𝐝𝐮 𝐛𝐨𝐭 𝐩𝐞𝐮𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.onlyDeveloperToUseOnReply=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚙️ | 𝐒𝐞𝐮𝐥 𝐥e 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐩𝐞𝐮𝐫 𝐩𝐞𝐮𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐫𝐞𝐩𝐨𝐧𝐬𝐞 𝐝𝐞 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.onlyDeveloperToUseOnReaction=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚙️ | 𝐒𝐞𝐮𝐥 𝐥𝐞 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐩𝐞𝐮𝐫 𝐩𝐞𝐮𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐫𝐞𝐚𝐜𝐭𝐢𝐨𝐧 𝐝𝐞 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.onlyVipUser=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n💎 | 𝐒𝐞𝐮𝐥𝐬 𝐥'𝐀𝐝𝐦𝐢𝐧𝐁𝐨𝐭 𝐞𝐭 𝐥𝐞 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐩𝐞𝐮𝐫 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.onlyVipUserToUseOnReply=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n💎 | 𝐒𝐞𝐮𝐥𝐬 𝐥'𝐀𝐝𝐦𝐢𝐧𝐁𝐨𝐭 𝐞𝐭 𝐥𝐞 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐩𝐞𝐮𝐫 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐫𝐞𝐩𝐨𝐧𝐬𝐞 𝐝𝐞 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.onlyVipUserToUseOnReaction=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n💎 | 𝐒𝐞𝐮𝐥𝐬 𝐥'𝐀𝐝𝐦𝐢𝐧𝐁𝐨𝐭 𝐞𝐭 𝐥𝐞 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐩𝐞𝐮𝐫 𝐩𝐞𝐮𝐯𝐞𝐧𝐭 𝐮𝐭𝐢𝐥𝐢𝐬𝐞𝐫 𝐥𝐚 𝐫𝐞𝐚𝐜𝐭𝐢𝐨𝐧 𝐝𝐞 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.waitingForCommand=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⏱ 𝐕𝐨𝐮𝐬 𝐞̂𝐭𝐞𝐬 𝐝𝐚𝐧𝐬 𝐥𝐞 𝐭𝐞𝐦𝐩𝐬 𝐝’𝐚𝐭𝐭𝐞𝐧𝐭𝐞.\n» 𝐑𝐞𝐯𝐞𝐧𝐞𝐳 𝐚̀𝐩𝐫𝐞𝐬 %1𝐬\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.errorOccurred=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ [ %1 ] 𝐄𝐫𝐫𝐞𝐮𝐫 𝐚̀ 𝐥𝐚 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐞 "%2"\n\n%3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.errorOccurred2=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ [ %1 ] 𝐄𝐫𝐫𝐞𝐮𝐫 onChat 𝐝𝐚𝐧𝐬 "%2"\n\n%3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.errorOccurred3=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ [ %1 ] 𝐄𝐫𝐫𝐞𝐮𝐫 onReply 𝐝𝐚𝐧𝐬 "%2"\n\n%3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.errorOccurred4=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ [ %1 ] 𝐄𝐫𝐫𝐞𝐮𝐫 onReaction 𝐝𝐚𝐧𝐬 "%2"\n\n%3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.errorOccurred5=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ [ %1 ] 𝐄𝐫𝐫𝐞𝐮𝐫 onEvent 𝐝𝐚𝐧𝐬 "%2"\n\n%3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.errorOccurred6=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ [ %1 ] 𝐄𝐫𝐫𝐞𝐮𝐫 onEvent 𝐝𝐚𝐧𝐬 "%2"\n\n%3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.errorOccurred7=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ [ %1 ] 𝐄𝐫𝐫𝐞𝐮𝐫 onAnyEvent 𝐝𝐚𝐧𝐬 "%2"\n\n%3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.cannotFindCommandName=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Impossible de trouver le nom de la commande pour exécuter cette réponse\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-handlerEvents.cannotFindCommand=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Impossible de trouver la commande "%1" pour cette réponse\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.onlyAdmin=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ | 𝑺𝒆𝒖𝒍𝒔 𝒍𝒆𝒔 𝒂𝒅𝒎𝒊𝒏𝒔 𝒅𝒖 𝒈𝒓𝒐𝒖𝒑𝒆 𝒑𝒆𝒖𝒗𝒆𝒏𝒕 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒓 𝒍𝒂 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒆 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.onlyAdminToUseOnReply=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ | 𝑺𝒆𝒖𝒍𝒔 𝒍𝒆𝒔 𝒂𝒅𝒎𝒊𝒏𝒔 𝒑𝒆𝒖𝒗𝒆𝒏𝒕 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒓 𝒍𝒂 𝒓𝒆𝒑𝒐𝒏𝒔𝒆 𝒅𝒆 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.onlyAdminToUseOnReaction=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ | 𝑺𝒆𝒖𝒍𝒔 𝒍𝒆𝒔 𝒂𝒅𝒎𝒊𝒏𝒔 𝒑𝒆𝒖𝒗𝒆𝒏𝒕 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒓 𝒍𝒂 𝒓𝒆𝒂𝒄𝒕𝒊𝒐𝒏 𝒅𝒆 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.onlyAdminBot2=rose✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n💫 | 𝑺𝒆𝒖𝒍𝒔 𝒍𝒆𝒔 𝒖𝒔𝒆𝒓𝒔 𝑽𝑰𝑷 𝒆𝒕 𝒑𝒍𝒖𝒔 𝒑𝒆𝒖𝒗𝒆𝒏𝒕 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒓 𝒍𝒂 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒆 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.onlyAdminBot2ToUseOnReply=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n💫 | 𝑺𝒆𝒖𝒍𝒔 𝒍𝒆𝒔 𝒖𝒔𝒆𝒓𝒔 𝑽𝑰𝑷 𝒑𝒆𝒖𝒗𝒆𝒏𝒕 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒓 𝒍𝒂 𝒓𝒆𝒑𝒐𝒏𝒔𝒆 𝒅𝒆 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.onlyAdminBot2ToUseOnReaction=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n💫 | 𝑺𝒆𝒖𝒍𝒔 𝒍𝒆𝒔 𝒖𝒔𝒆𝒓𝒔 𝑽𝑰𝑷 𝒑𝒆𝒖𝒗𝒆𝒏𝒕 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒓 𝒍𝒂 𝒓𝒆𝒂𝒄𝒕𝒊𝒐𝒏 𝒅𝒆 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.onlyDeveloper=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚙️ | 𝑺𝒆𝒖𝒍 𝒍𝒆 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒑𝒆𝒖𝒓 𝒅𝒖 𝒃𝒐𝒕 𝒑𝒆𝒖𝒕 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒓 𝒍𝒂 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒆 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.onlyDeveloperToUseOnReply=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚙️ | 𝑺𝒆𝒖𝒍 𝒍𝒆 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒑𝒆𝒖𝒓 𝒑𝒆𝒖𝒕 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒓 𝒍𝒂 𝒓𝒆𝒑𝒐𝒏𝒔𝒆 𝒅𝒆 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.onlyDeveloperToUseOnReaction=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚙️ | 𝑺𝒆𝒖𝒍 𝒍𝒆 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒑𝒆𝒖𝒓 𝒑𝒆𝒖𝒕 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒓 𝒍𝒂 𝒓𝒆𝒂𝒄𝒕𝒊𝒐𝒏 𝒅𝒆 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.onlyVipUser=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n💎 | 𝑺𝒆𝒖𝒍𝒔 𝒍'𝑨𝒅𝒎𝒊𝒏𝑩𝒐𝒕 𝒆𝒕 𝒍𝒆 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒑𝒆𝒖𝒓 𝒑𝒆𝒖𝒗𝒆𝒏𝒕 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒓 𝒍𝒂 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒆 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.onlyVipUserToUseOnReply=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n💎 | 𝑺𝒆𝒖𝒍𝒔 𝒍'𝑨𝒅𝒎𝒊𝒏𝑩𝒐𝒕 𝒆𝒕 𝒍𝒆 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒑𝒆𝒖𝒓 𝒑𝒆𝒖𝒗𝒆𝒏𝒕 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒓 𝒍𝒂 𝒓𝒆𝒑𝒐𝒏𝒔𝒆 𝒅𝒆 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.onlyVipUserToUseOnReaction=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n💎 | 𝑺𝒆𝒖𝒍𝒔 𝒍'𝑨𝒅𝒎𝒊𝒏𝑩𝒐𝒕 𝒆𝒕 𝒍𝒆 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒑𝒆𝒖𝒓 𝒑𝒆𝒖𝒗𝒆𝒏𝒕 𝒖𝒕𝒊𝒍𝒊𝒔𝒆𝒓 𝒍𝒂 𝒓𝒆𝒂𝒄𝒕𝒊𝒐𝒏 𝒅𝒆 "%1"\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.waitingForCommand=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⏱ 𝑽𝒐𝒖𝒔 𝒆̂𝒕𝒆𝒔 𝒅𝒂𝒏𝒔 𝒍𝒆 𝒕𝒆𝒎𝒑𝒔 𝒅’𝒂𝒕𝒕𝒆𝒏𝒕𝒆.\n» 𝑹𝒆𝒗𝒆𝒏𝒆𝒛 𝒂̀𝒑𝒓𝒆𝒔 %1𝒔\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.errorOccurred=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ [ %1 ] 𝑬𝒓𝒓𝒆𝒖𝒓 𝒂̀ 𝒍𝒂 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒆 "%2"\n\n%3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.errorOccurred2=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ [ %1 ] 𝑬𝒓𝒓𝒆𝒖𝒓 𝒐𝒏𝑪𝒉𝒂𝒕 𝒅𝒂𝒏𝒔 "%2"\n\n%3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.errorOccurred3=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ [ %1 ] 𝑬𝒓𝒓𝒆𝒖𝒓 𝒐𝒏𝑹𝒆𝒑𝒍𝒚 𝒅𝒂𝒏𝒔 "%2"\n\n%3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.errorOccurred4=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ [ %1 ] 𝑬𝒓𝒓𝒆𝒖𝒓 𝒐𝒏𝑹𝒆𝒂𝒄𝒕𝒊𝒐𝒏 𝒅𝒂𝒏𝒔 "%2"\n\n%3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.errorOccurred5=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ [ %1 ] 𝑬𝒓𝒓𝒆𝒖𝒓 𝒐𝒏𝑬𝒗𝒆𝒏𝒕 𝒅𝒂𝒏𝒔 "%2"\n\n%3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.errorOccurred6=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ [ %1 ] 𝑬𝒓𝒓𝒆𝒖𝒓 𝒐𝒏𝑬𝒗𝒆𝒏𝒕 𝒅𝒂𝒏𝒔 "%2"\n\n%3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.errorOccurred7=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ [ %1 ] 𝑬𝒓𝒓𝒆𝒖𝒓 𝒐𝒏𝑨𝒏𝒚𝑬𝒗𝒆𝒏𝒕 𝒅𝒂𝒏𝒔 "%2"\n\n%3\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.cannotFindCommandName=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑰𝒎𝒑𝒐𝒔𝒔𝒊𝒃𝒍𝒆 𝒅𝒆 𝒕𝒓𝒐𝒖𝒗𝒆𝒓 𝒍𝒆 𝒏𝒐𝒎 𝒅𝒆 𝒍𝒂 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒆 𝒑𝒐𝒖𝒓 𝒆𝒙𝒆́𝒄𝒖𝒕𝒆𝒓 𝒄𝒆𝒕𝒕𝒆 𝒓𝒆́𝒑𝒐𝒏𝒔𝒆\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+handlerEvents.cannotFindCommand=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑰𝒎𝒑𝒐𝒔𝒔𝒊𝒃𝒍𝒆 𝒅𝒆 𝒕𝒓𝒐𝒖𝒗𝒆𝒓 𝒍𝒂 𝒄𝒐𝒎𝒎𝒂𝒏𝒅𝒆 "%1" 𝒑𝒐𝒖𝒓 𝒄𝒆𝒕𝒕𝒆 𝒓𝒆́𝒑𝒐𝒏𝒔𝒆\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 
 # bot/autoUptime.js
 autoUptime.autoUptimeTurnedOn=Mode AutoUptime activé
@@ -126,15 +126,15 @@ autoUptime.autoUptimeTurnedOn=Mode AutoUptime activé
 # database/controller/index.js
 indexController.connectingMongoDB=Connexion à une base de données MONGODB
 indexController.connectMongoDBSuccess=Connexion à la base de données MongoDB réussie !
-indexController.connectMongoDBError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Une erreur est survenue lors de la connexion à MongoDB :\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+indexController.connectMongoDBError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑼𝒏𝒆 𝒆𝒓𝒓𝒆𝒖𝒓 𝒆𝒔𝒕 𝒔𝒖𝒓𝒗𝒆𝒏𝒖𝒆 𝒍𝒐𝒓𝒔 𝒅𝒆 𝒍𝒂 𝒄𝒐𝒏𝒏𝒆𝒙𝒊𝒐𝒏 𝒂̀ 𝑴 flavour𝑶𝑵𝑮𝑶𝑫𝑩 :\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 indexController.connectingMySQL=Connexion à une base de données SQLITE
 indexController.connectMySQLSuccess=Connexion à la base de données SQLITE réussie !
-indexController.connectMySQLError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Une erreur est survenue lors de la connexion à SQLITE :\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+indexController.connectMySQLError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑼𝒏𝒆 𝒆𝒓𝒓𝒆𝒖𝒓 𝒆𝒔𝒕 𝒔𝒖𝒓𝒗𝒆𝒏𝒖𝒆 𝒍𝒐𝒓𝒔 𝒅𝒆 𝒍𝒂 𝒄𝒐𝒏𝒏𝒆𝒙𝒊𝒐𝒏 𝒂̀ 𝑺𝑸𝑳𝑰𝑻𝑬 :\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 
 # updater.js
-updater.updateTooFast=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚠️ Veuillez attendre 5 minutes entre les commits.\n» Temps restant : %1 min %2 sec\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+updater.updateTooFast=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n⚠️ 𝑽𝒆𝒖𝒊𝒍𝒍𝒆𝒛 𝒂𝒕𝒕𝒆𝒏𝒅𝒓𝒆 5 𝒎𝒊𝒏𝒖𝒕𝒆𝒔 𝒆𝒏𝒕𝒓𝒆 𝒍𝒆𝒔 𝒄𝒐𝒎𝒎𝒊𝒕𝒔.\n» 𝑻𝒆𝒎𝒑𝒔 𝒓𝒆𝒔𝒕𝒂𝒏𝒕 : %1 𝒎𝒊𝒏 %2 𝒔𝒆𝒄\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 updater.latestVersion=Vous utilisez la dernière version
-updater.cantFindVersion=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Version non définie (%1). Vérifiez votre package.json\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+updater.cantFindVersion=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑽𝒆𝒓𝒔𝒊𝒐𝒏 𝒏𝒐𝒏 𝒅𝒆́𝒇𝒊𝒏𝒊𝒆 (%1). 𝑽𝒆́𝒓𝒊𝒇𝒊𝒆𝒛 𝒗𝒐𝒕𝒓𝒆 𝒑𝒂𝒄𝒌𝒂𝒈𝒆.𝒋𝒔𝒐𝒏\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 updater.newVersions=Il y a %1 nouvelles versions à mettre à jour, démarrage de la mise à jour...
 updater.updateSuccess=Mise à jour réussie%1
 updater.configChanged=⚠️ Le fichier %1 a été modifié, veuillez vérifier votre config.json
@@ -148,15 +148,15 @@ updater.skipFile=Fichier %1 ignoré lors de la mise à jour (commentaire %2 trou
 verifyfbid.sendCode=Votre code de vérification est :\n%1\nLe code de vérification est valable pendant %2 minutes
 
 # utils.js
-utils.errorOccurred=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Une erreur est survenue :\n\n%1\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+utils.errorOccurred=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑼𝒏𝒆 𝒆𝒓𝒓𝒆𝒖𝒓 𝒆𝒔𝒕 𝒔𝒖𝒓𝒗𝒆𝒏𝒖𝒆 :\n\n%1\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 
 # for command
 command.restartedBot=Le bot a été redémarré
 
 # dashboard/app.js
-app.googleApiRefreshTokenExpired=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Token révoqué/expiré. Accédez à : https://developers.google.com/oauthplayground/\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-app.tooManyRequests=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Trop de requêtes envoyées. Veuillez réessayer plus tard.\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-app.notPermissionChangeFbstate=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Vous n’avez pas la permission de modifier fbstate !\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
-app.notFoundFbstate=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Veuillez entrer fbstate !\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+app.googleApiRefreshTokenExpired=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑻𝒐𝒌𝒆𝒏 𝒓𝒆́𝒗𝒐𝒒𝒖𝒆́/𝒆𝒙𝒑𝒊𝒓𝒆́. 𝑨𝒄𝒄𝒆́𝒅𝒆𝒛 𝒂̀ : https://developers.google.com/oauthplayground/\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+app.tooManyRequests=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑻𝒓𝒐𝒑 𝒅𝒆 𝒓𝒆𝒒𝒖𝒆̂𝒕𝒆𝒔 𝒆𝒏𝒗𝒐𝒚𝒆́𝒆𝒔. 𝑽𝒆𝒖𝒊𝒍𝒍𝒆𝒛 𝒓𝒆́𝒆𝒔𝒔𝒂𝒚𝒆𝒓 𝒑𝒍𝒖𝒔 𝒕𝒂𝒓𝒅.\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+app.notPermissionChangeFbstate=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑽𝒐𝒖𝒔 𝒏’𝒂𝒗𝒆𝒛 𝒑𝒂𝒔 𝒍𝒂 𝒑𝒆𝒓𝒎𝒊𝒔𝒔𝒊𝒐𝒏 𝒅𝒆 𝒎𝒐𝒅𝒊𝒇𝒊𝒆𝒓 𝒇𝒃𝒔𝒕𝒂𝒕𝒆 !\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+app.notFoundFbstate=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑽𝒆𝒖𝒊𝒍𝒍𝒆𝒛 𝒆𝒏𝒕𝒓𝒆𝒓 𝒇𝒃𝒔𝒕𝒂𝒕𝒆 !\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
 app.changedFbstateSuccess=fbstate modifié avec succès !
-app.serverError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ Erreur interne du serveur, veuillez réessayer ultérieurement.\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
+app.serverError=✧ ▬▭▬ ▬▬ ✦✧✦ ▬▬ ▬▬ ✧\n❌ 𝑬𝒓𝒓𝒆𝒖𝒓 𝒊𝒏𝒕𝒆𝒓𝒏𝒆 𝒅𝒆𝒔 𝒔𝒆𝒓𝒗𝒆𝒖𝒓𝒔, 𝒗𝒆𝒖𝒊𝒍𝒍𝒆𝒛 𝒓𝒆́𝒆𝒔𝒔𝒂𝒚𝒆𝒓 𝒖𝒍𝒕𝒆́𝒓𝒊𝒆𝒖𝒓𝒆𝒎𝒆𝒏𝒕.\n✧ ▬▭▬ ▭▬ ✦✧✦ ▬▭ ▬▭▬ ✧
