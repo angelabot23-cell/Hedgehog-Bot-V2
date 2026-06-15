@@ -120,7 +120,7 @@ async function generateCmdCanvas(userId, userName, actionTitle, statusText, deta
 module.exports = {
 	config: {
 		name: "cmd",
-		version: "2.0",
+		version: "2.1",
 		author: "NTKhang x Célestin 🔥 (Canvas Edition)",
 		countDown: 5,
 		role: 2,
@@ -182,7 +182,6 @@ module.exports = {
 	},
 
 	onStart: async ({ args, message, api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData, event, commandName, getLang }) => {
-		const { unloadScripts, loadScripts } = global.utils;
 		const senderID = event.senderID;
 		const senderName = await usersData.getName(senderID);
 
@@ -316,7 +315,6 @@ module.exports = {
 	},
 
 	onReaction: async function ({ Reaction, message, event, api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData, getLang }) {
-		const { loadScripts } = global.utils;
 		const { author, data: { fileName, rawCode } } = Reaction;
 		if (event.userID != author) return;
 		
@@ -333,4 +331,204 @@ module.exports = {
 	}
 };
 
-// ... Le reste de tes fonctions internes obfusquées sous le module (loadScripts, unloadScripts complexes) restent inchangées en dessous.
+// ==========================================================
+// ⚙️ FONCTIONS INTERNES RE-INDEXÉES (OBFUSCATION / COMPILATION)
+// ==========================================================
+const packageAlready = [];
+const spinner = "\\|/-";
+let count = 0;
+
+function loadScripts(folder, fileName, log, configCommands, api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData, getLang, rawCode) {
+	const storageCommandFilesPath = global.GoatBot[folder == "cmds" ? "commandFilesPath" : "eventCommandsFilesPath"];
+
+	try {
+		if (rawCode) {
+			fileName = fileName.slice(0, -3);
+			fs.writeFileSync(path.normalize(`${process.cwd()}/scripts/${folder}/${fileName}.js`), rawCode);
+		}
+		const regExpCheckPackage = /require(\s+|)\((\s+|)[`'"]([^`'"]+)[`'"]/g;
+		const { GoatBot } = global;
+		const { onFirstChat: allOnFirstChat, onChat: allOnChat, onEvent: allOnEvent, onAnyEvent: allOnAnyEvent } = GoatBot;
+		let setMap, typeEnvCommand, commandType;
+		if (folder == "cmds") {
+			typeEnvCommand = "envCommands";
+			setMap = "commands";
+			commandType = "command";
+		}
+		else if (folder == "events") {
+			typeEnvCommand = "envEvents";
+			setMap = "eventCommands";
+			commandType = "event command";
+		}
+		
+		let pathCommand;
+		if (process.env.NODE_ENV == "development") {
+			const devPath = path.normalize(process.cwd() + `/scripts/${folder}/${fileName}.dev.js`);
+			if (fs.existsSync(devPath)) pathCommand = devPath;
+			else pathCommand = path.normalize(process.cwd() + `/scripts/${folder}/${fileName}.js`);
+		}
+		else pathCommand = path.normalize(process.cwd() + `/scripts/${folder}/${fileName}.js`);
+
+		const contentFile = fs.readFileSync(pathCommand, "utf8");
+		let allPackage = contentFile.match(regExpCheckPackage);
+		if (allPackage) {
+			allPackage = allPackage
+				.map(p => p.match(/[`'"]([^`'"]+)[`'"]/)[1])
+				.filter(p => p.indexOf("/") !== 0 && p.indexOf("./") !== 0 && p.indexOf("../") !== 0 && p.indexOf(__dirname) !== 0);
+			for (let packageName of allPackage) {
+				if (packageName.startsWith('@')) packageName = packageName.split('/').slice(0, 2).join('/');
+				else packageName = packageName.split('/')[0];
+
+				if (!packageAlready.includes(packageName)) {
+					packageAlready.push(packageName);
+					if (!fs.existsSync(`${process.cwd()}/node_modules/${packageName}`)) {
+						let wating;
+						try {
+							wating = setInterval(() => {
+								count++;
+								loading.info("PACKAGE", `Installing ${packageName} ${spinner[count % spinner.length]}`);
+							}, 80);
+							execSync(`npm install ${packageName} --save`, { stdio: "pipe" });
+							clearInterval(wating);
+						}
+						catch (error) {
+							clearInterval(wating);
+							throw new Error(`Can't install package ${packageName}`);
+						}
+					}
+				}
+			}
+		}
+
+		const oldCommand = require(pathCommand);
+		const oldCommandName = oldCommand?.config?.name;
+		if (!oldCommandName) {
+			if (GoatBot[setMap].get(oldCommandName)?.location != pathCommand)
+				throw new Error(`${commandType} name "${oldCommandName}" is already exist in command "${removeHomeDir(GoatBot[setMap].get(oldCommandName)?.location || "")}"`);
+		}
+		if (oldCommand.config.aliases) {
+			let oldAliases = oldCommand.config.aliases;
+			if (typeof oldAliases == "string") oldAliases = [oldAliases];
+			for (const alias of oldAliases) GoatBot.aliases.delete(alias);
+		}
+		delete require.cache[require.resolve(pathCommand)];
+
+		const command = require(pathCommand);
+		command.location = pathCommand;
+		const configCommand = command.config;
+		if (!configCommand || typeof configCommand != "object") throw new Error("config of command must be an object");
+		const scriptName = configCommand.name;
+
+		const indexOnChat = allOnChat.findIndex(item => item == oldCommandName);
+		if (indexOnChat != -1) allOnChat.splice(indexOnChat, 1);
+
+		const indexOnFirstChat = allOnChat.findIndex(item => item == oldCommandName);
+		let oldOnFirstChat;
+		if (indexOnFirstChat != -1) {
+			oldOnFirstChat = allOnFirstChat[indexOnFirstChat];
+			allOnFirstChat.splice(indexOnFirstChat, 1);
+		}
+
+		const indexOnEvent = allOnEvent.findIndex(item => item == oldCommandName);
+		if (indexOnEvent != -1) allOnEvent.splice(indexOnEvent, 1);
+
+		const indexOnAnyEvent = allOnAnyEvent.findIndex(item => item == oldCommandName);
+		if (indexOnAnyEvent != -1) allOnAnyEvent.splice(indexOnAnyEvent, 1);
+
+		if (command.onLoad) command.onLoad({ api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData });
+
+		const { envGlobal, envConfig } = configCommand;
+		if (!command.onStart) throw new Error('Function onStart is missing!');
+		if (typeof command.onStart != "function") throw new Error('Function onStart must be a function!');
+		if (!scriptName) throw new Error('Name of command is missing!');
+
+		if (configCommand.aliases) {
+			let { aliases } = configCommand;
+			if (typeof aliases == "string") aliases = [aliases];
+			for (const alias of aliases) {
+				if (aliases.filter(item => item == alias).length > 1) throw new Error(`alias "${alias}" duplicate in ${commandType} "${scriptName}"`);
+				if (GoatBot.aliases.has(alias)) throw new Error(`alias "${alias}" is already exist`);
+				GoatBot.aliases.set(alias, scriptName);
+			}
+		}
+
+		if (envGlobal) {
+			if (typeof envGlobal != "object" || Array.isArray(envGlobal)) throw new Error("envGlobal must be an object");
+			for (const key in envGlobal) configCommands.envGlobal[key] = envGlobal[key];
+		}
+		if (envConfig && typeof envConfig == "object" && !Array.isArray(envConfig)) {
+			if (!configCommands[typeEnvCommand][scriptName]) configCommands[typeEnvCommand][scriptName] = {};
+			configCommands[typeEnvCommand][scriptName] = envConfig;
+		}
+
+		GoatBot[setMap].delete(oldCommandName);
+		GoatBot[setMap].set(scriptName, command);
+		fs.writeFileSync(client.dirConfigCommands, JSON.stringify(configCommands, null, 2));
+
+		const keyUnloadCommand = folder == "cmds" ? "commandUnload" : "commandEventUnload";
+		const findIndex = (configCommands[keyUnloadCommand] || []).indexOf(`${fileName}.js`);
+		if (findIndex != -1) configCommands[keyUnloadCommand].splice(findIndex, 1);
+		fs.writeFileSync(client.dirConfigCommands, JSON.stringify(configCommands, null, 2));
+
+		if (command.onChat) allOnChat.push(scriptName);
+		if (command.onFirstChat) allOnFirstChat.push({ commandName: scriptName, threadIDsChattedFirstTime: oldOnFirstChat?.threadIDsChattedFirstTime || [] });
+		if (command.onEvent) allOnEvent.push(scriptName);
+		if (command.onAnyEvent) allOnAnyEvent.push(scriptName);
+
+		const indexStorageCommandFilesPath = storageCommandFilesPath.findIndex(item => item.filePath == pathCommand);
+		if (indexStorageCommandFilesPath != -1) storageCommandFilesPath.splice(indexStorageCommandFilesPath, 1);
+		storageCommandFilesPath.push({
+			filePath: pathCommand,
+			commandName: [scriptName, ...configCommand.aliases || []]
+		});
+
+		return { status: "success", name: fileName, command };
+	}
+	catch (err) {
+		const defaultError = new Error();
+		defaultError.name = err.name;
+		defaultError.message = err.message;
+		defaultError.stack = err.stack;
+		return { status: "failed", name: fileName, error: err, errorWithThoutRemoveHomeDir: defaultError };
+	}
+}
+
+function unloadScripts(folder, fileName, configCommands, getLang) {
+	const pathCommand = `${process.cwd()}/scripts/${folder}/${fileName}.js`;
+	if (!fs.existsSync(pathCommand)) {
+		const err = new Error(getLang("missingFile", `${fileName}.js`));
+		err.name = "FileNotFound";
+		throw err;
+	}
+	const command = require(pathCommand);
+	const commandName = command.config?.name;
+	if (!commandName) throw new Error(getLang("invalidFileName", `${fileName}.js`));
+	
+	const { GoatBot } = global;
+	const { onChat: allOnChat, onEvent: allOnEvent, onAnyEvent: allOnAnyEvent } = GoatBot;
+	
+	const indexOnChat = allOnChat.findIndex(item => item == commandName);
+	if (indexOnChat != -1) allOnChat.splice(indexOnChat, 1);
+	const indexOnEvent = allOnEvent.findIndex(item => item == commandName);
+	if (indexOnEvent != -1) allOnEvent.splice(indexOnEvent, 1);
+	const indexOnAnyEvent = allOnAnyEvent.findIndex(item => item == commandName);
+	if (indexOnAnyEvent != -1) allOnAnyEvent.splice(indexOnAnyEvent, 1);
+
+	if (command.config.aliases) {
+		let aliases = command.config?.aliases || [];
+		if (typeof aliases == "string") aliases = [aliases];
+		for (const alias of aliases) GoatBot.aliases.delete(alias);
+	}
+	const setMap = folder == "cmds" ? "commands" : "eventCommands";
+	delete require.cache[require.resolve(pathCommand)];
+	GoatBot[setMap].delete(commandName);
+
+	const commandUnload = configCommands[folder == "cmds" ? "commandUnload" : "commandEventUnload"] || [];
+	if (!commandUnload.includes(`${fileName}.js`)) commandUnload.push(`${fileName}.js`);
+	configCommands[folder == "cmds" ? "commandUnload" : "commandEventUnload"] = commandUnload;
+	fs.writeFileSync(global.client.dirConfigCommands, JSON.stringify(configCommands, null, 2));
+	return { status: "success", name: fileName };
+}
+
+global.utils.loadScripts = loadScripts;
+global.utils.unloadScripts = unloadScripts;
