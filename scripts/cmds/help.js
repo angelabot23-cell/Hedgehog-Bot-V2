@@ -17,6 +17,13 @@ function toSmallCaps(text) {
   return text.split('').map(c => smallCapsMap[c] || c).join('');
 }
 
+// Fonction utilitaire pour générer une couleur HEX aléatoire et lumineuse
+function getRandomNeonColor() {
+  const hues = [0, 30, 60, 120, 180, 200, 270, 300, 330]; // Sélection de teintes vives
+  const randomHue = hues[Math.floor(Math.random() * hues.length)];
+  return `hsl(${randomHue}, 100%, 60%)`;
+}
+
 async function generateHelpCanvas(userId, userName, categories) {
   const allFlattened = [];
   
@@ -29,55 +36,95 @@ async function generateHelpCanvas(userId, userName, categories) {
     });
   });
 
-  const startY = 145;
-  const lineHeight = 22;
-  const colWidth = 240; 
+  const startY = 160;
+  const lineHeight = 24;
+  const colWidth = 250; 
   const startX = 40;
   
-  // Correction de la boucle infinie : On fixe le nombre de colonnes à 4 de base 
-  // et on calcule directement la hauteur requise.
   const columnsCount = 4;
   const itemsPerCol = Math.ceil(allFlattened.length / columnsCount);
   const contentHeight = itemsPerCol * lineHeight;
   
-  // Largeur fixe basée sur les 4 colonnes, et hauteur dynamique selon le contenu
   const canvasWidth = (columnsCount * colWidth) + (startX * 2);
   const canvasHeight = Math.max(850, startY + contentHeight + 60);
 
   const canvas = createCanvas(canvasWidth, canvasHeight);
   const ctx = canvas.getContext('2d');
 
-  let gradient = ctx.createLinearGradient(0, 0, canvasWidth, canvasHeight);
-  gradient.addColorStop(0, '#090a15');
-  gradient.addColorStop(0.5, '#101124');
-  gradient.addColorStop(1, '#090a15');
-  ctx.fillStyle = gradient;
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  // ---- CRÉATION DES COULEURS ALÉATOIRES POUR CETTE SÉQUENCE ----
+  const primaryColor = getRandomNeonColor();
+  const secondaryColor = getRandomNeonColor();
+  const accentColor = getRandomNeonColor();
 
-  ctx.strokeStyle = '#00f2fe';
-  ctx.lineWidth = 3;
-  ctx.strokeRect(15, 15, canvasWidth - 30, canvasHeight - 30);
+  // ---- DÉCOR : FOND CYBERPUNK SOMBRE ----
+  let bgGradient = ctx.createLinearGradient(0, 0, 0, canvasHeight);
+  bgGradient.addColorStop(0, '#0a0b10');
+  bgGradient.addColorStop(0.5, '#121520');
+  bgGradient.addColorStop(1, '#0a0b10');
+  ctx.fillStyle = bgGradient;
+  ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
+  // ---- DÉCOR : BORDURE EN DÉGRADÉ ALÉATOIRE ----
+  let borderGradient = ctx.createLinearGradient(0, 0, canvasWidth, canvasHeight);
+  borderGradient.addColorStop(0, primaryColor);
+  borderGradient.addColorStop(0.5, secondaryColor);
+  borderGradient.addColorStop(1, accentColor);
+  ctx.strokeStyle = borderGradient;
+  ctx.lineWidth = 4;
+  ctx.strokeRect(20, 20, canvasWidth - 40, canvasHeight - 40);
+
+  // ---- DÉCOR : AVATAR AVEC AURÉOLE LUMINEUSE ALEATOIRE ----
   const avatarUrl = `https://graph.facebook.com/${userId}/picture?width=150&height=150&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`;
   try {
     const userAvatar = await loadImage(avatarUrl);
     ctx.save();
-    ctx.beginPath(); ctx.arc(65, 65, 30, 0, Math.PI * 2, true); ctx.clip();
-    ctx.drawImage(userAvatar, 35, 35, 60, 60);
+    ctx.beginPath(); 
+    ctx.arc(75, 75, 35, 0, Math.PI * 2, true); 
+    ctx.clip();
+    ctx.drawImage(userAvatar, 40, 40, 70, 70);
     ctx.restore();
-    ctx.strokeStyle = '#ffffff'; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(65, 65, 31, 0, Math.PI * 2); ctx.stroke();
+    
+    // Cercle Néon changeant autour de l'avatar
+    ctx.strokeStyle = primaryColor; 
+    ctx.lineWidth = 3; 
+    ctx.beginPath(); 
+    ctx.arc(75, 75, 36, 0, Math.PI * 2); 
+    ctx.stroke();
   } catch (e) {
-    ctx.fillStyle = '#00f2fe'; ctx.beginPath(); ctx.arc(65, 65, 30, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = secondaryColor; 
+    ctx.beginPath(); 
+    ctx.arc(75, 75, 35, 0, Math.PI * 2); 
+    ctx.fill();
   }
 
-  ctx.fillStyle = '#00f2fe'; ctx.font = 'bold 24px "Sans-Serif"'; ctx.fillText("⚡ PREMIUM SYSTEM INDEX", 120, 55);
-  ctx.fillStyle = '#ffffff'; ctx.font = '13px "Sans-Serif"';
+  // ---- DÉCOR : TEXTES DE L'ENTÊTE ----
+  ctx.fillStyle = primaryColor; 
+  ctx.font = 'bold 26px "Sans-Serif"'; 
+  ctx.fillText("⚡ MULTI-COLOR SYSTEM MATRIX", 135, 65);
+  
+  ctx.fillStyle = '#ffffff'; 
+  ctx.font = '13px "Sans-Serif"';
   const cleanName = userName.length > 20 ? userName.substring(0, 20) + "..." : userName;
-  ctx.fillText(`OPERATOR // ${cleanName.toUpperCase()} | TOTAL: ${allFlattened.filter(i => i.type === 'cmd').length} CMDS`, 120, 78);
+  ctx.fillText(`USER // ${cleanName.toUpperCase()} | ONLINE COMMANDS: ${allFlattened.filter(i => i.type === 'cmd').length}`, 135, 90);
 
-  ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)'; ctx.lineWidth = 1;
-  ctx.beginPath(); ctx.moveTo(30, 110); ctx.lineTo(canvasWidth - 30, 110); ctx.stroke();
+  // Ligne de séparation Tech
+  ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)'; 
+  ctx.lineWidth = 1;
+  ctx.beginPath(); 
+  ctx.moveTo(35, 125); 
+  ctx.lineTo(canvasWidth - 35, 125); 
+  ctx.stroke();
 
+  // Lignes verticales discrètes pour structurer les colonnes
+  for (let i = 1; i < columnsCount; i++) {
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
+    ctx.beginPath();
+    ctx.moveTo(startX + (i * colWidth) - 10, startY - 10);
+    ctx.lineTo(startX + (i * colWidth) - 10, canvasHeight - 50);
+    ctx.stroke();
+  }
+
+  // ---- CONFIGURATION ET RENDU DES COMMANDES ----
   allFlattened.forEach((item, index) => {
     const col = Math.floor(index / itemsPerCol);
     const row = index % itemsPerCol;
@@ -85,15 +132,20 @@ async function generateHelpCanvas(userId, userName, categories) {
     const y = startY + (row * lineHeight);
 
     if (item.type === 'cat') {
-      ctx.fillStyle = '#00f2fe';
-      ctx.font = 'bold 11px "Sans-Serif"';
+      // Les catégories prennent la couleur secondaire dynamique
+      ctx.fillStyle = secondaryColor;
+      ctx.font = 'bold 12px "Sans-Serif"';
       const displayAuthor = item.author.length > 15 ? item.author.substring(0, 12) + '..' : item.author;
-      ctx.fillText(`[ ${item.name} ] ✍️ ${displayAuthor}`, x, y);
+      ctx.fillText(`⧓  ${item.name}`, x, y);
+      
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+      ctx.font = '9px "Sans-Serif"';
+      ctx.fillText(`by ${displayAuthor}`, x + 12, y + 10);
     } else {
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
-      ctx.font = '11px "Sans-Serif"';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+      ctx.font = '12px "Sans-Serif"';
       const displayCmd = item.name.length > 20 ? item.name.substring(0, 17) + '..' : item.name;
-      ctx.fillText(`> ${displayCmd}`, x + 5, y);
+      ctx.fillText(`  ▫ ${displayCmd}`, x + 5, y + 5);
     }
   });
 
@@ -107,11 +159,11 @@ async function generateHelpCanvas(userId, userName, categories) {
 module.exports = {
   config: {
     name: "help",
-    version: "19.8",
+    version: "19.10",
     author: "Christus x Célestin 🔥",
     countDown: 2,
     role: 0,
-    shortDescription: { en: "Indexation au format carré avec affichage des créateurs." },
+    shortDescription: { en: "Indexation au format carré avec couleurs dynamiques aléatoires." },
     category: "info",
     guide: { en: "help [all]" },
   },
@@ -127,7 +179,7 @@ module.exports = {
 🌐 [ ᴄᴏɴꜰɪɢᴜʀᴀᴛɪᴏɴ ѕʏѕᴛᴇᴍ // ${cfg.name.toUpperCase()} ]
 ──────────────────────────────
 🔹 𝖭𝗈𝗆 : ${toSmallCaps(cfg.name)}
-🔹 𝖢𝗋ᴇ́𝖺𝗍𝖾𝗎𝗋 : ${cfg.author || "Inconnu"}
+🔹 𝖢𝗋ᴇ́𝖺ᴛ𝖾𝗎𝗋 : ${cfg.author || "Inconnu"}
 🔹 𝖣𝖾𝗌𝖼𝗋𝗂𝗉ᴛɪᴏ𝗇 : ${cfg.description?.en || cfg.shortDescription?.en || "Aucune description"}
 🔹 𝖢𝖺𝗍ᴇ́ɢᴏʀɪᴇ : ${toSmallCaps(cfg.category || "info")}
 🔹 𝖢ᴏᴏʟᴅᴏᴡɴ : ${cfg.countDown || 0}s
@@ -189,7 +241,7 @@ module.exports = {
 🌐 [ ᴄᴏɴꜰɪɢᴜʀᴀᴛɪᴏɴ ѕʏѕᴛᴇᴍ // ${cfg.name.toUpperCase()} ]
 ──────────────────────────────
 🔹 𝖭𝗈𝗆 : ${toSmallCaps(cfg.name)}
-🔹 𝖢𝗋ᴇ́𝖺𝗍𝖾𝗎𝗋 : ${cfg.author || "Inconnu"}
+🔹 𝖢𝗋ᴇ́𝖺ᴛ𝖾𝗎𝗋 : ${cfg.author || "Inconnu"}
 🔹 𝖣𝖾𝗌𝖼𝗋𝗂𝗉ᴛɪᴏ̂ɴ : ${cfg.description?.en || cfg.shortDescription?.en || "Aucune description"}
 🔹 𝖢𝖺𝗍ᴇ́ɢᴏʀɪᴇ : ${toSmallCaps(cfg.category || "info")}
 🔹 𝖢ᴏᴏʟᴅᴏᴡɴ : ${cfg.countDown || 0}s
@@ -206,7 +258,6 @@ module.exports = {
         attachment: fs.createReadStream(imagePath)
       });
 
-      // Suppression sécurisée après l'envoi
       setTimeout(() => {
         if (fs.existsSync(imagePath)) fs.unlinkSync(imagePath);
       }, 5000);
