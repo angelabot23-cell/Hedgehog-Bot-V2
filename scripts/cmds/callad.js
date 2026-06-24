@@ -5,17 +5,14 @@ const path = require("path");
 
 const mediaTypes = ["photo", 'png', "animated_image", "video", "audio"];
 
-// Fonction utilitaire pour générer la carte Canvas de notification
 async function generateCallAdminCard({ title, name, id, details, content, avatarUrl, cacheKey }) {
 	const width = 650;
 	const padding = 25;
 	
-	// Calcul dynamique de la hauteur en fonction de la longueur du texte
 	const canvasTemp = createCanvas(width, 200);
 	const ctxTemp = canvasTemp.getContext("2d");
 	ctxTemp.font = "16px sans-serif";
 	
-	// Découpage simple du texte par lignes pour éviter les débordements
 	const words = content.split(' ');
 	let lines = [];
 	let currentLine = "";
@@ -38,22 +35,18 @@ async function generateCallAdminCard({ title, name, id, details, content, avatar
 	const canvas = createCanvas(width, height);
 	const ctx = canvas.getContext("2d");
 
-	// Fond sombre stylé
 	ctx.fillStyle = "#0d1117";
 	ctx.fillRect(0, 0, width, height);
 
-	// Bordure décorative bleue / violette
 	ctx.strokeStyle = "#00a2ff";
 	ctx.lineWidth = 3;
 	ctx.strokeRect(1.5, 1.5, width - 3, height - 3);
 
-	// En-tête / Badge Titre
 	ctx.fillStyle = "#161b22";
 	ctx.beginPath();
 	ctx.roundRect(padding, padding, width - padding * 2, 70, 8);
 	ctx.fill();
 
-	// Avatar de l'utilisateur (Cercle)
 	try {
 		const avatar = await loadImage(avatarUrl);
 		ctx.save();
@@ -70,8 +63,7 @@ async function generateCallAdminCard({ title, name, id, details, content, avatar
 		ctx.fill();
 	}
 
-	// Textes de l'en-tête
-	ctx.fillStyle = "#ff4757"; // Rouge Alerte / Notification
+	ctx.fillStyle = "#ff4757";
 	ctx.font = "bold 14px monospace";
 	ctx.fillText(title.toUpperCase(), padding + 75, padding + 25);
 
@@ -83,7 +75,6 @@ async function generateCallAdminCard({ title, name, id, details, content, avatar
 	ctx.font = "12px monospace";
 	ctx.fillText(`ID: ${id}`, padding + 75, padding + 62);
 
-	// Zone du contenu (Message)
 	let currentY = padding + 95;
 	ctx.fillStyle = "#1f242c";
 	ctx.beginPath();
@@ -98,7 +89,6 @@ async function generateCallAdminCard({ title, name, id, details, content, avatar
 		textY += 24;
 	}
 
-	// Métadonnées additionnelles (Ex: Nom du Groupe / Thread ID)
 	if (details) {
 		ctx.fillStyle = "#58a6ff";
 		ctx.font = "italic 13px sans-serif";
@@ -113,7 +103,7 @@ async function generateCallAdminCard({ title, name, id, details, content, avatar
 module.exports = {
 	config: {
 		name: "callad",
-		version: "2.0",
+		version: "2.1",
 		author: "NTKhang x Canvas",
 		countDown: 5,
 		role: 0,
@@ -152,7 +142,7 @@ module.exports = {
 		if (!args[0]) return message.reply(getLang("missingMessage"));
 		
 		const { senderID, threadID, isGroup } = event;
-		if (config.adminBot.length == 0) return message.reply(getLang("noAdmin"));
+		if (!config.adminBot || config.adminBot.length == 0) return message.reply(getLang("noAdmin"));
 
 		const senderName = await usersData.getName(senderID);
 		const userAvatar = `https://graph.facebook.com/${senderID}/picture?width=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`;
@@ -160,12 +150,11 @@ module.exports = {
 		let details = "";
 		if (isGroup) {
 			const tInfo = await threadsData.get(threadID);
-			details = `📍 Envoyé depuis le groupe : ${tInfo.threadName} (ID: ${threadID})`;
+			details = `📍 Envoyé depuis le groupe : ${tInfo.threadName || threadID} (ID: ${threadID})`;
 		} else {
 			details = `👤 Envoyé en message privé`;
 		}
 
-		// Génération de la carte graphique pour l'admin
 		const imagePath = await generateCallAdminCard({
 			title: "📥 NOUVEAU MESSAGE ALERTE",
 			name: senderName,
@@ -192,7 +181,8 @@ module.exports = {
 				global.GoatBot.onReply.set(messageSend.messageID, {
 					commandName,
 					messageID: messageSend.messageID,
-					threadID,
+					threadID, // Groupe/MP de l'utilisateur initial
+					adminID: uid, // ID de l'admin qui a reçu l'alerte
 					messageIDSender: event.messageID,
 					type: "userCallAdmin"
 				});
@@ -201,7 +191,6 @@ module.exports = {
 			}
 		}
 
-		// Nettoyage asynchrone du cache de l'image
 		try { unlinkSync(imagePath); } catch (e) {}
 
 		if (successIDs.length > 0) {
@@ -211,14 +200,23 @@ module.exports = {
 		}
 	},
 
-	onReply: async ({ args, event, api, message, Reply, usersData, commandName, getLang }) => {
-		const { type, threadID, messageIDSender } = Reply;
+	onReply: async function ({ args, event, api, message, reply, usersData, commandName, getLang }) {
+		// Ajustement automatique de la variable de récupération des données de réponse
+		const handleReply = reply || arguments[0].Reply;
+		if (!handleReply) return;
+
+		const { type, threadID, adminID, messageIDSender } = handleReply;
 		const senderName = await usersData.getName(event.senderID);
 		const userAvatar = `https://graph.facebook.com/${event.senderID}/picture?width=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`;
+		const { config } = global.GoatBot;
+
+		if (!args[0]) return message.reply(getLang("missingMessage"));
 
 		switch (type) {
 			case "userCallAdmin": {
-				// Réponse de l'ADMIN vers l'UTILISATEUR
+				// Sécurité : Seul l'admin enregistré ou un admin global peut répondre à l'alerte
+				if (!config.adminBot.includes(event.senderID)) return;
+
 				const imagePath = await generateCallAdminCard({
 					title: "👑 RÉPONSE DE L'ADMINISTRATEUR",
 					name: senderName,
@@ -237,23 +235,25 @@ module.exports = {
 					]
 				};
 
+				// On envoie le message vers le canal de l'utilisateur (threadID)
 				api.sendMessage(formMessage, threadID, (err, info) => {
 					try { unlinkSync(imagePath); } catch (e) {}
-					if (err) return message.err(err);
+					if (err) return log.err("CALL ADMIN", err);
 					
 					message.reply(getLang("replyUserSuccess"));
 					global.GoatBot.onReply.set(info.messageID, {
 						commandName,
 						messageID: info.messageID,
 						messageIDSender: event.messageID,
-						threadID: event.threadID,
+						threadID: event.threadID, // Contient le canal de l'admin actuel
+						adminID: event.senderID,
 						type: "adminReply"
 					});
 				}, messageIDSender);
 				break;
 			}
 			case "adminReply": {
-				// Suite de la discussion de l'UTILISATEUR vers l'ADMIN
+				// L'utilisateur répond à l'admin
 				let details = event.isGroup ? `📍 Groupe ID: ${event.threadID}` : `👤 Message Privé`;
 				
 				const imagePath = await generateCallAdminCard({
@@ -274,16 +274,18 @@ module.exports = {
 					]
 				};
 
-				api.sendMessage(formMessage, threadID, (err, info) => {
+				// On renvoie vers le canal privé de l'admin initial (adminID)
+				api.sendMessage(formMessage, adminID, (err, info) => {
 					try { unlinkSync(imagePath); } catch (e) {}
-					if (err) return message.err(err);
+					if (err) return log.err("CALL ADMIN", err);
 
 					message.reply(getLang("replySuccess"));
 					global.GoatBot.onReply.set(info.messageID, {
 						commandName,
 						messageID: info.messageID,
 						messageIDSender: event.messageID,
-						threadID: event.threadID,
+						threadID: event.threadID, // Canal de l'utilisateur
+						adminID: adminID,
 						type: "userCallAdmin"
 					});
 				}, messageIDSender);
