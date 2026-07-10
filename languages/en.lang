@@ -1,150 +1,150 @@
 # index.js
-Goat.newVersionDetected=Noyau obsolète. Version %2 disponible (Actuelle : %1). Synchro : node update
-Goat.autoRestart1=Reboot système imminent dans %1...
-Goat.autoRestart2=Cycle de reboot programmé : %1
-Goat.googleApiTokenExpired=Clé Google API révoquée.
+Goat.newVersionDetected=𝘕𝘰𝘶𝘷𝘦𝘢𝘶 𝘤𝘰𝘳𝘳𝘦𝘤𝘵𝘪𝘧 𝘥𝘪𝘴𝘱𝘰𝘯𝘪𝘣𝘭𝘦 : %2 (𝘈𝘤𝘵𝘶𝘦𝘭𝘭𝘦 : %1). 𝘚𝘺𝘯𝘤𝘩𝘳𝘰 : 𝘯𝘰𝘥𝘦 𝘶𝘱𝘥𝘢𝘵𝘦
+Goat.autoRestart1=𝘚𝘺𝘴𝘵𝘦̀𝘮𝘦 𝘦𝘯 𝘱𝘢𝘶𝘴𝘦, 𝘳𝘦𝘣𝘰𝘰𝘵 𝘢𝘶𝘵𝘰𝘮𝘢𝘵𝘪𝘲𝘶𝘦 𝘥𝘢𝘯𝘴 %1...
+Goat.autoRestart2=𝘊𝘺𝘤𝘭𝘦 𝘥𝘦 𝘳𝘦𝘭𝘢𝘯𝘤𝘦 𝘱𝘳𝘰𝘨𝘳𝘢𝘮𝘮𝘦́ : %1
+Goat.googleApiTokenExpired=𝘓𝘢 𝘤𝘭𝘦́ 𝘎𝘰𝘰𝘨𝘭𝘦 𝘈𝘗𝘐 𝘦𝘴𝘵 𝘰𝘣𝘴𝘰𝘭𝘦̀𝘵𝘦 𝘰𝘶 𝘳𝘦́𝘷𝘰𝘲𝘶𝘦́𝘦.
 
 # bot/login/login.js
-login.currentlyLogged=Infiltration de la matrice en cours...
-login.notFoundDirAccount=Fichier d'accès introuvable : %1
-login.loginToken=Authentification sécurisée par Token
-login.loginCookieString=Connexion par Cookie (String)
-login.loginCookieNetscape=Connexion par Cookie (Netscape)
-login.loginCookieArray=Connexion par Cookie (Array)
-login.loginPassword=Authentification par Logs Facebook...
-login.accountError=Fichier de configuration corrompu dans %7
-login.cannotFindAccount=Aucune session active. Choisissez un protocole :
-login.chooseAccount=Identification par Email / Password
-login.chooseToken=Identification par Jeton (Token)
-login.chooseCookieString=Identification par Cookie String
-login.chooseCookieArray=Identification par Cookie Array
-login.loginWith=Protocole sélectionné : %1
-login.inputEmail=> Identifiant ou numéro de cellule :
-login.inputPassword=> Code d'accès :
-login.input2FA=> Clé de double authentification (2FA) [Ou Entrée] :
-login.inputToken=> Jeton d'accès racine (EAAAA...) :
-login.inputCookieString=> Chaîne de Cookie chiffrée :
-login.inputCookieArray=> Tableau de segments de Cookies :
-login.refreshCookie=Régénération des cookies système...
-login.refreshCookieError=Échec de la régénération des sessions.
-login.refreshCookieSuccess=Session synchronisée avec succès. Redémarrez le bot.
-login.refreshCookieWarning=Mode auto activé, mais logs absents dans config.json.
-login.tokenError=Token invalide ou corrompu. Inspectez %2.
-login.cookieError=Session expirée ou Cookie rejeté.
-login.loginPasswordError=Erreur fatale lors de la liaison (config.json).
-login.loginSuccess=Matrice verrouillée et connectée.
-login.loginError=Échec critique de l'authentification.
-login.openDashboardSuccess=Console de contrôle principale activée.
-login.openDashboardError=Impossible d'initialiser l'interface graphique.
-login.changeGbanData=MODIFICATION DÉTECTÉE. DÉMARRAGE INTERDIT.
-login.errorNoti=Erreur de réception des flux de données.
-login.refreshFbstateSuccess=Fichier d'état %1 rafraîchi.
-login.refreshFbstateError=Erreur lors de la mise à jour du fichier d'état %1.
-login.youAreBanned=Votre signature numérique a été bannie par le noyau.
-login.runBot=Système actif. Écoute du réseau principal engagée...
-login.notLoggedIn=Erreur d'authentification. Session Facebook rompue.
-login.callBackError=Perte de signal sur l'écouteur MQTT.
-login.userBanned=Votre signature utilisateur est bannie du système.
-login.checkGbanError=Erreur réseau. Lancez le correctif : node update
-login.gbanMessage=Accès révoqué le %1. Motif : %2
-login.gbanMessageToDate=Accès révoqué le %1. Fin du protocole : %4
-login.gbanAdminMessage=Sujet %1 banni le %2. Motif : %3
-login.openServerUptimeSuccess=🚀 Relais de surveillance actif sur : %1
-login.openServerUptimeError=Échec du lancement du serveur de surveillance.
-login.restartListenMessage=Cycle de rafraîchissement MQTT toutes les %1.
-login.stopRestartListenMessage=Rafraîchissement automatique désactivé.
-login.restartListenMessageError=Erreur lors de la synchronisation de l'écouteur MQTT.
-login.restartListenMessage2=Écouteur MQTT réaligné avec succès.
-login.refreshCookieAfter=Nettoyage et actualisation des sessions dans %1.
-login.listenMqttClose=L'écouteur MQTT s'est déconnecté.
-login.listenMqttCloseByUser=Flux interrompu par l'opérateur.
-login.retryCheckLiveCookie=Analyse de l'intégrité de la session... Essai %1
-login.startBotSuccess=Prêt à intercepter vos ordres.
+login.currentlyLogged=𝘝𝘦́𝘳𝘪𝘧𝘪𝘤𝘢𝘵𝘪𝘰𝘯 𝘥𝘦𝘴 𝘢𝘤𝘤𝘦̀𝘴 𝘢𝘶 𝘴𝘦𝘳𝘷𝘦𝘶𝘳...
+login.notFoundDirAccount=𝘍𝘪𝘤𝘩𝘪𝘦𝘳 𝘥'𝘢𝘶𝘵𝘩𝘦𝘯𝘵𝘪𝘧𝘪𝘤𝘢𝘵𝘪𝘰𝘯 𝘪𝘯𝘵𝘳𝘰𝘶𝘷𝘢𝘣𝘭𝘦 : %1
+login.loginToken=𝘈𝘶𝘵𝘩𝘦𝘯𝘵𝘪𝘧𝘪𝘤𝘢𝘵𝘪𝘰𝘯 𝘷𝘪𝘢 𝘑𝘦𝘵𝘰𝘯 𝘥'𝘢𝘤𝘤𝘦̀𝘴 (𝘛𝘰𝘬𝘦𝘯)
+login.loginCookieString=𝘊𝘰𝘯𝘯𝘦𝘲𝘶𝘪𝘰𝘯 𝘷𝘪𝘢 𝘊𝘰𝘰𝘬𝘪𝘦 (𝘚𝘵𝘳𝘪𝘯𝘨)
+login.loginCookieNetscape=𝘊𝘰𝘯𝘯𝘦𝘲𝘶𝘪𝘰𝘯 𝘷𝘪𝘢 𝘊𝘰𝘰𝘬𝘪𝘦 (𝘕𝘦𝘵𝘴𝘤𝘢𝘱𝘦)
+login.loginCookieArray=𝘊𝘰𝘯𝘯𝘦𝘲𝘶𝘪𝘰𝘯 𝘷𝘪𝘢 𝘊𝘰𝘰𝘬𝘪𝘦 (𝘈𝘳𝘳𝘢𝘺)
+login.loginPassword=𝘓𝘪𝘢𝘪𝘴𝘰𝘯 𝘷𝘪𝘢 𝘐𝘥𝘦𝘯𝘵𝘪𝘧𝘪𝘢𝘯𝘵𝘴 𝘍𝘢𝘤𝘦𝘣𝘰𝘰𝘬...
+login.accountError=𝘍𝘪𝘤𝘩𝘪𝘦𝘳 𝘥𝘦 𝘤𝘰𝘯𝘧𝘪𝘨𝘶𝘳𝘢𝘵𝘪𝘰𝘯 𝘥𝘦́𝘧𝘦𝘤𝘵𝘶𝘦𝘶𝘹 𝘥𝘢𝘯𝘴 %7
+login.cannotFindAccount=𝘈𝘶𝘤𝘶𝘯𝘦 𝘴𝘦𝘴𝘴𝘪𝘰𝘯 𝘢𝘤𝘵𝘪𝘷𝘦. 𝘊𝘩𝘰𝘪𝘴𝘪𝘴𝘴𝘦𝘻 𝘶𝘯𝘦 𝘮𝘦́𝘵𝘩𝘰𝘥𝘦 𝘥𝘦 𝘤𝘰𝘯𝘯𝘦𝘲𝘶𝘪𝘰𝘯 :
+login.chooseAccount=𝘊𝘰𝘯𝘯𝘦𝘲𝘶𝘪𝘰𝘯 𝘱𝘢𝘳 𝘌-𝘮𝘢𝘪𝘭 / 𝘔𝘰𝘵 𝘥𝘦 𝘱𝘢𝘴𝘴𝘦
+login.chooseToken=𝘊--𝘯𝘯𝘦𝘲𝘶𝘪𝘰𝘯 𝘱𝘢𝘳 𝘑𝘦𝘵𝘰𝘯 𝘥'𝘢𝘤𝘤𝘦̀𝘴 (𝘛𝘰𝘬𝘦𝘯)
+login.chooseCookieString=𝘊𝘰𝘯𝘯𝘦𝘲𝘶𝘪𝘰𝘯 𝘱𝘢𝘳 𝘊𝘰𝘰𝘬𝘪𝘦 𝘚𝘵𝘳𝘪𝘯𝘨
+login.chooseCookieArray=𝘊𝘰𝘯𝘯𝘦𝘲𝘶𝘪𝘰𝘯 𝘱𝘢𝘳 𝘊𝘰𝘰𝘬𝘪𝘦 𝘈𝘳𝘳𝘢𝘺
+login.loginWith=𝘗𝘳𝘰𝘵𝘰𝘤𝘰𝘭𝘦 𝘴𝘦́𝘭𝘦𝘤𝘵𝘪𝘰𝘯𝘯𝘦́ : %1
+login.inputEmail=> 𝘌𝘯𝘵𝘳𝘦𝘻 𝘷𝘰𝘵𝘳𝘦 𝘪𝘥𝘦𝘯𝘵𝘪𝘧𝘪𝘢𝘯𝘵 𝘰𝘶 𝘢𝘥𝘳𝘦𝘴𝘴𝘦 𝘦-𝘮𝘢𝘪𝘭 :
+login.inputPassword=> 𝘌𝘯𝘵𝘳𝘦𝘻 𝘷𝘰𝘵𝘳𝘦 𝘮𝘰𝘵 𝘥𝘦 𝘱𝘢𝘴𝘴𝘦 :
+login.input2FA=> 𝘌𝘯𝘵𝘳𝘦𝘻 le 𝘤𝘰𝘥𝘦 𝘥𝘦 𝘥𝘰𝘶𝘣𝘭𝘦 𝘢𝘶𝘵𝘩𝘦𝘯𝘵𝘪𝘧𝘪𝘤𝘢𝘵𝘪𝘰𝘯 (2𝘍𝘈) [𝘖𝘶 𝘌𝘯𝘵𝘳𝘦́𝘦] :
+login.inputToken=> 𝘌𝘯𝘵𝘳𝘦𝘻 𝘷𝘰𝘵𝘳𝘦 𝘫𝘦𝘵𝘰𝘯 𝘥'𝘢𝘤𝘤𝘦̀𝘴 (𝘌𝘈𝘈𝘈𝘈...) :
+login.inputCookieString=> 𝘌𝘯𝘵𝘳𝘦𝘻 𝘭𝘢 𝘤𝘩𝘢𝘪̂𝘯𝘦 𝘥𝘦 𝘊𝘰𝘰𝘬𝘪𝘦 :
+login.inputCookieArray=> 𝘌𝘯𝘵𝘳𝘦𝘻 𝘭𝘦 𝘵𝘢𝘣𝘭𝘦𝘢𝘶 𝘥𝘦 𝘴𝘦𝘨𝘮𝘦𝘯𝘵𝘴 𝘥𝘦 𝘊𝘰𝘰𝘬𝘪𝘦𝘴 :
+login.refreshCookie=𝘈𝘤𝘵𝘶𝘢𝘭𝘪𝘴𝘢𝘵𝘪𝘰𝘯 𝘥𝘦𝘴 𝘤𝘰𝘰𝘬𝘪𝘦𝘴 𝘥𝘦 𝘴𝘦𝘴𝘴𝘪𝘰𝘯...
+login.refreshCookieError=𝘐𝘮𝘱𝘰𝘴𝘴𝘪𝘣𝘭𝘦 𝘥'𝘢𝘤𝘵𝘶𝘢𝘭𝘪𝘴𝘦𝘳 𝘭𝘢 𝘴𝘦𝘴𝘴𝘪𝘰𝘯 𝘦𝘯 𝘤𝘰𝘶𝘳.
+login.refreshCookieSuccess=𝘚𝘦𝘴𝘴𝘪--𝘯 𝘴𝘺𝘯𝘤𝘩𝘳𝘰𝘯𝘪𝘴𝘦́𝘦. 𝘝𝘦𝘶𝘪𝘭𝘭𝘦𝘻 𝘳𝘦𝘭𝘢𝘯𝘤𝘦𝘳 𝘭𝘦 𝘱𝘳𝘰𝘤𝘦𝘴𝘴𝘶𝘴.
+login.refreshCookieWarning=𝘔𝘰𝘥𝘦 𝘢𝘶𝘵𝘰𝘮𝘢𝘵𝘪𝘲𝘶𝘦 𝘢𝘤𝘵𝘪𝘷𝘦́, 𝘮𝘢𝘪𝘴 𝘭𝘦𝘴 𝘢𝘤𝘤𝘦̀𝘴 𝘴𝘰𝘯𝘵 𝘢𝘣𝘴𝘦𝘯𝘵𝘴 𝘥𝘦 𝘤𝘰𝘯𝘧𝘪𝘨.𝘫𝘴𝘰𝘯.
+login.tokenError=𝘑𝘦𝘵𝘰𝘯 𝘥'𝘢𝘤𝘤𝘦̀𝘴 𝘪𝘯𝘷𝘢𝘭𝘪𝘥𝘦 𝘰𝘶 𝘦𝘹𝘱𝘪𝘳𝘦́. 𝘐𝘯𝘴𝘱𝘦𝘤𝘵𝘦𝘻 %2.
+login.cookieError=𝘓𝘢 𝘴𝘦𝘴𝘴𝘪𝘰𝘯 𝘢 𝘦𝘹𝘱𝘪𝘳𝘦́ 𝘰𝘶 𝘭𝘦 𝘊𝘰𝘰𝘬𝘪𝘦 𝘢 𝘦́𝘵𝘦́ 𝘳𝘦𝘫𝘦𝘵𝘦́.
+login.loginPasswordError=𝘌𝘳𝘳𝘦𝘶𝘳 𝘥𝘦 𝘭𝘪𝘢𝘪𝘴𝘰𝘯 𝘢𝘷𝘦𝘤 𝘭𝘦 𝘧𝘪𝘤𝘩𝘪𝘦𝘳 𝘤𝘰𝘯𝘧𝘪𝘨.𝘫𝘴𝘰𝘯.
+login.loginSuccess=𝘊𝘰𝘯𝘯𝘦𝘲𝘶𝘪𝘰𝘯 𝘦́𝘵𝘢𝘣𝘭𝘪𝘦 𝘢𝘷𝘦𝘤 𝘴𝘶𝘤𝘤𝘦̀𝘴.
+login.loginError=𝘌́𝘤𝘩𝘦𝘤 𝘥'𝘢𝘶𝘵𝘩𝘦𝘯𝘵𝘪𝘧𝘪𝘤𝘢𝘵𝘪𝘰𝘯.
+login.openDashboardSuccess=𝘐𝘯𝘵𝘦𝘳𝘧𝘢𝘤𝘦 𝘥𝘦 𝘤𝘰𝘯𝘵𝘳𝘰̂𝘭𝘦 𝘱𝘳𝘪𝘯𝘤𝘪𝘱𝘢𝘭𝘦 𝘦𝘯 𝘭𝘪𝘨𝘯𝘦.
+login.openDashboardError=𝘐𝘮𝘱𝘰𝘴𝘴𝘪𝘣𝘭𝘦 𝘥'𝘪𝘯𝘪𝘵𝘪𝘢𝘭𝘪𝘴𝘦𝘳 𝘭'𝘪𝘯𝘵𝘦𝘳𝘧𝘢𝘤𝘦 𝘥𝘦 𝘤𝘰𝘯𝘵𝘳--̂𝘭𝘦.
+login.changeGbanData=𝘔𝘰𝘥𝘪𝘧𝘪𝘤𝘢𝘵𝘪𝘰𝘯𝘴 𝘯𝘰𝘯 𝘢𝘶𝘵𝘰𝘳𝘪𝘴𝘦́𝘦𝘴 𝘥𝘦́𝘵𝘦𝘤𝘵𝘦́𝘦𝘴. 𝘋𝘦́𝘮𝘢𝘳𝘳𝘢𝘨𝘦 𝘴𝘶𝘴𝘱𝘦𝘯𝘥𝘶.
+login.errorNoti=𝘌𝘳𝘳𝘦𝘶𝘳 𝘭𝘰𝘳𝘴 𝘥𝘦 𝘭𝘢 𝘳𝘦́𝘤𝘦𝘱𝘵𝘪𝘰𝘯 𝘥𝘦𝘴 𝘧𝘭𝘶𝘹 𝘥𝘦 𝘥𝘰𝘯𝘯𝘦́𝘦𝘴.
+login.refreshFbstateSuccess=𝘓'𝘦́𝘵𝘢𝘵 𝘥𝘦 𝘴𝘦𝘴𝘴𝘪𝘰𝘯 𝘥𝘶 𝘧𝘪𝘤𝘩𝘪𝘦𝘳 %1 𝘢 𝘦́𝘵𝘦́ 𝘮𝘪𝘴 𝘢̀ 𝘫𝘰𝘶𝘳.
+login.refreshFbstateError=𝘌𝘳𝘳𝘦𝘶𝘳 𝘭𝘰𝘳𝘴 𝘥𝘦 𝘭𝘢 𝘮𝘪𝘴𝘦 𝘢̀ 𝘫𝘰𝘶𝘳 𝘥𝘶 𝘧𝘪𝘤𝘩𝘪𝘦𝘳 𝘥'𝘦́𝘵𝘢𝘵 %1.
+login.youAreBanned=𝘝𝘰𝘵𝘳𝘦 𝘪𝘥𝘦𝘯𝘵𝘪𝘧𝘪𝘢𝘯𝘵 𝘴𝘺𝘴𝘵𝘦̀𝘮𝘦 𝘢 𝘦́𝘵𝘦́ 𝘴𝘶𝘴𝘱𝘦𝘯𝘥𝘶.
+login.runBot=𝘚𝘺𝘴𝘵𝘦̀𝘮𝘦 𝘦𝘯 𝘭𝘪𝘨𝘯𝘦. 𝘓'𝘦́𝘤𝘰𝘶𝘵𝘦 𝘥𝘶 𝘳𝘦́𝘴𝘦𝘢𝘶 𝘱𝘳𝘪𝘯𝘤𝘪𝘱𝘢𝘭 𝘦𝘴𝘵 𝘭𝘢𝘯𝘤𝘦́𝘦...
+login.notLoggedIn=𝘌𝘳𝘳𝘦𝘶𝘳 𝘥'𝘢𝘶𝘵𝘩𝘦𝘯𝘵𝘪𝘧𝘪𝘤𝘢𝘵𝘪𝘰𝘯. 𝘓𝘢 𝘴𝘦𝘴𝘴𝘪𝘰𝘯 𝘍𝘢𝘤𝘦𝘣𝘰𝘰𝘬 𝘢 𝘦́𝘵𝘦́ 𝘪𝘯𝘵𝘦𝘳𝘳𝘰𝘮𝘱𝘶𝘦.
+login.callBackError=𝘗𝘦𝘳𝘵𝘦 𝘥𝘦 𝘤𝘰𝘯𝘯𝘦𝘲𝘶𝘪𝘰𝘯 𝘢𝘷𝘦𝘤 𝘭'𝘦́𝘤𝘰𝘶𝘵𝘦𝘶𝘳 𝘔𝘘𝘛.
+login.userBanned=𝘝𝘰𝘵𝘳𝘦 𝘱𝘳𝘰𝘧𝘪𝘭 𝘶𝘵𝘪𝘭𝘪𝘴𝘢𝘵𝘦𝘶𝘳 𝘦𝘴𝘵 𝘵𝘦𝘮𝘱𝘰𝘳𝘢𝘪𝘳𝘦𝘮𝘦𝘯𝘵 𝘴𝘶𝘴𝘱𝘦𝘯𝘥𝘶 𝘥𝘦 𝘤𝘦 𝘴𝘦𝘳𝘷𝘪𝘤𝘦.
+login.checkGbanError=𝘌𝘳𝘳𝘦𝘶𝘳 𝘳𝘦́𝘴𝘦𝘢𝘶. 𝘌𝘹𝘦́𝘤𝘶𝘵𝘦𝘻 𝘭𝘦 𝘴𝘤𝘳𝘪𝘱𝘵 𝘥𝘦 𝘮𝘪𝘴𝘦 𝘢̀ 𝘫𝘰𝘶𝘳 : 𝘯𝘰𝘥𝘦 𝘶𝘱𝘥𝘢𝘵𝘦
+login.gbanMessage=𝘈𝘤𝘤𝘦̀𝘴 𝘳𝘦́𝘷𝘰𝘲𝘶𝘦́ 𝘭𝘦 %1. 𝘔𝘰𝘵𝘪𝘧 : %2
+login.gbanMessageToDate=𝘈𝘤𝘤𝘦̀𝘴 𝘳𝘦́𝘷𝘰𝘲𝘶𝘦́ 𝘭𝘦 %1. 𝘍𝘪𝘯 𝘥𝘦 𝘭𝘢 𝘴𝘶𝘴𝘱𝘦𝘯𝘴𝘪𝘰𝘯 : %4
+login.gbanAdminMessage=𝘓'𝘶𝘵𝘪𝘭𝘪𝘴𝘢𝘵𝘦𝘶𝘳 %1 𝘢 𝘦́𝘵𝘦́ 𝘴𝘶𝘴𝘱𝘦𝘯𝘥𝘶 𝘭𝘦 %2. 𝘔𝘰𝘵𝘪𝘧 : %3
+login.openServerUptimeSuccess=𝘚𝘦𝘳𝘷𝘦𝘶𝘳 𝘥𝘦 surveillance 𝘢𝘤𝘵𝘪𝘧 𝘢̀ 𝘭'𝘢𝘥𝘳𝘦𝘴𝘴𝘦 : %1
+login.openServerUptimeError=𝘌́𝘤𝘩𝘦𝘤 𝘥𝘶 𝘭𝘢𝘯𝘤𝘦𝘮𝘦𝘯𝘵 𝘥𝘶 𝘴𝘦𝘳𝘷𝘦𝘶𝘳 𝘥𝘦 𝘴𝘶𝘳𝘷𝘦𝘪𝘭𝘭𝘢𝘯𝘤𝘦.
+login.restartListenMessage=𝘈𝘤𝘵𝘶𝘢𝘭𝘪𝘴𝘢𝘵𝘪𝘰𝘯 𝘥𝘦 𝘭'𝘦́𝘤𝘰𝘶𝘵𝘦𝘶𝘳 𝘔𝘘𝘛 𝘤𝘰𝘯𝘧𝘪𝘨𝘶𝘳𝘦́𝘦 𝘵𝘰𝘶𝘵𝘦𝘴 𝘭𝘦𝘴 %1.
+login.stopRestartListenMessage=𝘈𝘤ctu𝘢𝘭𝘪𝘴𝘢𝘵𝘪𝘰𝘯 𝘢𝘶𝘵𝘰𝘮𝘢𝘵𝘪𝘲𝘶𝘦 𝘥𝘦́𝘴𝘢𝘤𝘵𝘪𝘷𝘦́𝘦.
+login.restartListenMessageError=𝘌𝘳𝘳𝘦𝘶𝘳 𝘭𝘰𝘳𝘴 𝘥𝘦 𝘭𝘢 𝘴𝘺𝘯𝘤𝘩𝘳𝘰𝘯𝘪𝘴𝘢𝘵𝘪--𝘯 𝘥𝘦 𝘭'𝘦́𝘤𝘰𝘶𝘵𝘦𝘶𝘳 𝘔𝘘𝘛.
+login.restartListenMessage2=𝘓'𝘦́𝘤𝘰𝘶𝘵𝘦𝘶𝘳 𝘔𝘘𝘛 𝘢 𝘦́𝘵𝘦́ 𝘳𝘦́𝘢𝘭𝘪𝘨𝘯𝘦́ 𝘢𝘷𝘦𝘤 𝘴𝘶𝘤𝘤𝘦̀ស.
+login.refreshCookieAfter=𝘕𝘦𝘵𝘵𝘰𝘺𝘢𝘨𝘦 𝘦𝘵 𝘢𝘤𝘵𝘶𝘢𝘭𝘪𝘴𝘢𝘵𝘪--𝘯 𝘥𝘦𝘴 𝘴𝘦𝘴𝘴𝘪𝘰𝘯𝘴 𝘱𝘳𝘦́𝘷𝘶𝘴 𝘥𝘢𝘯𝘴 %1.
+login.listenMqttClose=𝘓'𝘦́𝘤𝘰𝘶𝘵𝘦𝘶𝘳 𝘔𝘘𝘛 𝘴'𝘦𝘴𝘵 𝘥𝘦́𝘤𝘰𝘯𝘯𝘦𝘤𝘵𝘦́.
+login.listenMqttCloseByUser=𝘍𝘭𝘶𝘹 𝘪𝘯𝘵𝘦𝘳𝘳𝘰𝘮𝘱𝘶 𝘱𝘢𝘳 𝘭'𝘢𝘥𝘮𝘪𝘯𝘪𝘴𝘵𝘳𝘢𝘵𝘦𝘶𝘳.
+login.retryCheckLiveCookie=𝘝𝘦́𝘳if𝘪𝘤𝘢𝘵𝘪𝘰𝘯 𝘥𝘦 𝘭address 𝘴𝘦𝘴𝘴𝘪--𝘯 𝘦𝘯 𝘤𝘰𝘶𝘳... 𝘛𝘦𝘯𝘵𝘢𝘵𝘪𝘷𝘦 %1
+login.startBotSuccess=𝘓𝘦 𝘴𝘦𝘳𝘷𝘪𝘤𝘦 𝘦𝘴𝘵 𝘰𝘱𝘦́𝘳𝘢𝘵𝘪𝘰𝘯𝘯𝘦𝘭. 𝘌𝘯 𝘢𝘵𝘵𝘦𝘯𝘵𝘦 𝘥𝘦 𝘤𝘰𝘮𝘮𝘢𝘯𝘥𝘦𝘴.
 
 # bot/custom.js
-custom.refreshedFb_dtsg=Clés de cryptage fb_dtsg synchronisées.
-custom.refreshedFb_dtsgError=Erreur d'intégrité sur les clés de sécurité fb_dtsg.
+custom.refreshedFb_dtsg=𝘓𝘦𝘴 𝘤𝘭𝘦́𝘴 𝘥𝘦 𝘴𝘦́𝘤𝘶𝘳𝘪𝘵𝘦́ 𝘧𝘣_𝘥𝘵𝘴𝘨 𝘰𝘯𝘵 𝘦́𝘵𝘦́ 𝘴𝘺𝘯𝘤𝘩𝘳𝘰𝘯𝘪𝘴𝘦́𝘦𝘴.
+custom.refreshedFb_dtsgError=𝘌𝘳𝘳𝘦𝘶𝘳 𝘥𝘦 𝘷𝘢𝘭𝘪𝘥𝘢𝘵𝘪𝘰𝘯 𝘴𝘶𝘳 𝘭𝘦𝘴 𝘤𝘭𝘦́𝘴 𝘥𝘦 𝘴𝘦́𝘤𝘶𝘳𝘪𝘵𝘦́ 𝘧𝘣_𝘥𝘵𝘴𝘨.
 
 # bot/login/loadData.js
-loadData.loadThreadDataSuccess=Données de %1 salons mémorisées.
-loadData.loadUserDataSuccess=Profils de %1 utilisateurs synchronisés.
-loadData.refreshingThreadData=Mise à jour de la base de données centrale...
-loadData.refreshThreadDataSuccess=Flux de %1 salons mis à jour.
-loadData.refreshThreadDataError=Échec de synchronisation des bases de salons.
+loadData.loadThreadDataSuccess=𝘋𝘰𝘯𝘯𝘦́𝘦𝘴 𝘥𝘦 %1 𝘨𝘳𝘰𝘶𝘱𝘦𝘴 𝘦𝘯𝘳𝘦𝘨𝘪𝘴𝘵𝘳𝘦́𝘦𝘴.
+loadData.loadUserDataSuccess=𝘗𝘳𝘰𝘧𝘪𝘭𝘴 𝘥𝘦 %1 𝘶𝘵𝘪𝘭𝘪𝘴𝘢𝘵𝘦𝘶𝘳𝘴 𝘴𝘺𝘯𝘤𝘩𝘳𝘰𝘯𝘪𝘴𝘦́𝘴.
+loadData.refreshingThreadData=𝘔𝘪𝘴𝘦 𝘢̀ 𝘫𝘰𝘶𝘳 𝘥𝘦 𝘭𝘢 𝘣𝘢𝘴𝘦 𝘥𝘦 𝘥𝘰𝘯𝘯𝘦́𝘦𝘴 𝘤𝘦𝘯𝘵𝘳𝘢𝘭𝘦...
+loadData.refreshThreadDataSuccess=𝘍𝘭𝘶𝘹 𝘥𝘦 %1 𝘨𝘳𝘰𝘶𝘱𝘦𝘴 𝘮𝘪𝘴 𝘢̀ 𝘫𝘰𝘶𝘳.
+loadData.refreshThreadDataError=𝘌́𝘤𝘩𝘦𝘤 𝘥𝘦 𝘭𝘢 𝘴𝘺𝘯𝘤𝘩𝘳𝘰𝘯𝘪𝘴𝘢𝘵𝘪--𝘯 𝘥𝘦𝘴 𝘥𝘰𝘯𝘯𝘦́𝘦𝘴 𝘥𝘦 𝘨𝘳𝘰𝘶𝘱𝘦𝘴.
 
 # bot/login/loadScripts.js
-loadScripts.loadScriptsError=Code anormal détecté dans les modules %1 :
-loadScripts.loadScriptsNotMatchOrigin=Divergence de code avec le dépôt principal %1 :
-loadScripts.NOT_FOUND=INTROUVABLE DANS LE CODEX :
-loadScripts.NOT_MATCH=MODIFICATION COMPROMETTANTE :
+loadScripts.loadScriptsError=𝘜𝘯𝘦 𝘦𝘳𝘳𝘦𝘶𝘳 𝘢 𝘦́𝘵𝘦́ 𝘥𝘦́𝘵𝘦𝘤𝘵𝘦́𝘦 𝘥𝘢𝘯𝘴 𝘭𝘦𝘴 𝘮𝘰𝘥𝘶𝘭𝘦𝘴 %1 :
+loadScripts.loadScriptsNotMatchOrigin=𝘋𝘪𝘷𝘦𝘳𝘨𝘦𝘯𝘤𝘦 𝘥𝘦 𝘤𝘰𝘥𝘦 𝘤𝘰𝘯𝘴𝘵𝘢𝘵𝘦́𝘦 𝘢𝘷𝘦𝘤 𝘭𝘦 𝘥𝘦́𝘱𝘰̂𝘵 𝘱𝘳𝘪𝘯𝘤𝘪𝘱𝘢𝘭 %1 :
+loadScripts.NOT_FOUND=𝘔𝘖𝘋𝘜𝘓𝘌 𝘐𝘕𝘛𝘙𝘖𝘜𝘝𝘈𝘉𝘓𝘌 :
+loadScripts.NOT_MATCH=𝘔𝘖𝘋𝘜𝘓𝘌 𝘔𝘖𝘋𝘐𝘍𝘐𝘌́ :
 
 # bot/login/socketIO.js
-socketIO.connected=Canal Socket.io sécurisé et connecté.
-socketIO.error=Le serveur a refusé la liaison Socket.io.
-
-# bot/handler/handlerCheckData.js
-handlerCheckData.cantCreateThread=Échec d'inscription du salon %1 dans la base de données.
-handlerCheckData.cantCreateUser=Impossible d'indexer l'utilisateur %1.
-
-# bot/handler/handlerEvents.js
-handlerEvents.userBanned=🛑 Accès refusé. Votre identité est banni.\n» Motif : %1\n» ID : %3
-handlerEvents.threadBanned=❌ Ce salon a été banni de la matrice.\n» Motif : %1\n» ID : %3
-handlerEvents.onlyAdminBox=🔒 Zone restreinte. Commandes réservées aux administrateurs.
-handlerEvents.onlyAdminBot=❌ Commande réservée aux architectes de la Maison Void.
-handlerEvents.commandNotFound=🖤 [ %1 ] HORS MATRICE.\n〉 Tapez [ %2help ] pour voir le grimoire.\n──────────────────────\n⬛ MAISON VOID ⬛
-handlerEvents.commandNotFound2=⬛ [ 𝗠𝗔𝗜𝗦𝗢𝗡 𝗩𝗢𝗜𝗗 ] ⬛\n──────────────────────\n☠️ PRÉFIXE : 「 ^ 」\n──────────────────────\n🌐 MATRICE : Opérationnelle
-handlerEvents.commandSyntaxError=❌ COMPORTEMENT ANORMAL.\n〉 Aide : [ %1help %2 ] pour décoder ce module.
-handlerEvents.onlyAdmin=❌ Privilèges d'administrateur requis pour exécuter : "%1".
-handlerEvents.onlyAdminToUseOnReply=❌ Fonctionnalité verrouillée pour les membres standards.
-handlerEvents.onlyAdminToUseOnReaction=❌ Réaction réservée aux administrateurs du salon (%1).
-handlerEvents.onlyAdminBot2=🔴 ACCÈS STRICTEMENT REJETÉ.\nAutorisation de niveau 0 manquante pour [ %1 ].
-handlerEvents.onlyAdminBot2ToUseOnReply=❌ Réservé à l'élite de la haute administration.
-handlerEvents.onlyAdminBot2ToUseOnReaction=❌ Interaction exclusive réservée aux créateurs.
-handlerEvents.waitingForCommand=⏳ FILTRE DE SÉCURITÉ.\nAttendez %1s avant d'émettre cette commande.
-handlerEvents.errorOccurred=⚠️ Anomalie détectée sur le module "%2"\n\n%3
-handlerEvents.errorOccurred2=⚠️ Erreur de registre (onChat) sur le module "%2"\n\n%3
-handlerEvents.errorOccurred3=⚠️ Échec de réponse (onReply) sur le module "%2"\n\n%3
-handlerEvents.errorOccurred4=⚠️ Interruption par réaction (onReaction) sur "%2"\n\n%3
-handlerEvents.errorOccurred5=⚠️ Dysfonctionnement événementiel (onEvent) sur "%2"\n\n%3
-handlerEvents.errorOccurred6=⚠️ Rupture interne sur l'événement "%2"\n\n%3
-handlerEvents.errorOccurred7=⚠️ Exception générale (onAnyEvent) sur le module "%2"\n\n%3
-handlerEvents.cannotFindCommandName=Impossible d'identifier le module d'origine.
-handlerEvents.cannotFindCommand=Le module "%1" est introuvable ou désactivé.
+socketIO.connected=𝘊𝘢𝘯𝘢𝘭 𝘥𝘦 𝘤𝘰𝘮𝘮𝘶𝘯𝘪𝘤𝘢𝘵𝘪--𝘯 𝘚𝘰𝘤𝘬𝘦𝘵.𝘪𝘰 𝘤𝘰𝘯𝘯𝘦𝘤𝘵𝘦́.
+socketIO.error=𝘓𝘦 𝘴𝘦𝘳𝘷𝘦𝘶𝘳 𝘢 𝘳𝘦𝘧𝘶𝘴𝘦́ 𝘭𝘢 𝘤𝘰𝘯𝘯𝘦𝘲𝘶𝘪--𝘯 𝘚𝘰𝘤𝘬𝘦𝘵.𝘪𝘰.
 
 # database/controller/index.js
-indexController.connectingMongoDB=Connexion au serveur MONGODB...
-indexController.connectMongoDBSuccess=Base de données MONGODB synchronisée.
-indexController.connectMongoDBError=Rupture de liaison avec MongoDB :
-indexController.connectingMySQL=Initialisation du registre SQLITE...
-indexController.connectMySQLSuccess=Base locale SQLITE cryptée et synchronisée.
-indexController.connectMySQLError=Erreur critique d'ouverture SQLITE :
+indexController.connectingMongoDB=𝘊𝘰𝘯𝘯𝘦𝘲𝘶𝘪𝘰𝘯 𝘢𝘶 𝘴𝘦𝘳𝘷𝘦𝘶𝘳 𝘔𝘰𝘯𝘨𝘰𝘎𝘉...
+indexController.connectMongoDBSuccess=𝘉𝘢𝘴𝘦 𝘥𝘦 𝘥𝘰𝘯𝘯𝘦́𝘦𝘴 𝘔𝘰𝘯𝘨𝘰𝘎𝘉 𝘴𝘺𝘯𝘤𝘩𝘳𝘰𝘯𝘪𝘴𝘦́𝘦.
+indexController.connectMongoDBError=𝘙𝘶𝘱𝘵𝘶𝘳𝘦 𝘥𝘦 𝘤--𝘯𝘯𝘦𝘲𝘶𝘪𝘰𝘯 𝘢𝘷𝘦𝘤 𝘔𝘰𝘯𝘨𝘰𝘎𝘉 :
+indexController.connectingMySQL=𝘐𝘯𝘪𝘵𝘪𝘢𝘭𝘪𝘴𝘢𝘵𝘪𝘰𝘯 𝘥𝘦 𝘭𝘢 𝘣𝘢𝘴𝘦 𝘚𝘲𝘓𝘪𝘵𝘦...
+indexController.connectMySQLSuccess=𝘉𝘢𝘴𝘦 𝘥𝘦 𝘥𝘰𝘯𝘯𝘦́𝘦𝘴 𝘚𝘲𝘓𝘪𝘵𝘦 𝘴𝘺𝘯𝘤𝘩𝘳--𝘯𝘪𝘴𝘦́𝘦.
+indexController.connectMySQLError=𝘌𝘳𝘳𝘦𝘶𝘳 𝘥'𝘰𝘶𝘷𝘦𝘳𝘵𝘶𝘳𝘦 𝘥𝘦 𝘭𝘢 𝘣𝘢𝘴𝘦 𝘚𝘲𝘓𝘪𝘵𝘦 :
 
 # updater.js
-updater.updateTooFast=L'infrastructure est saturée. Attendez %1m %2s avant de retenter une mise à jour.
-updater.latestVersion=Le système utilise déjà le code le plus récent.
-updater.cantFindVersion=Version indéterminée (%1) détectée dans package.json.
-updater.newVersions=%1 correctifs disponibles. Injection du code en cours...
-updater.updateSuccess=Mise à jour système déployée. %1
-updater.configChanged=Le fichier de structure %1 a changé. Modifiez votre config.json.
-updater.installingPackages=Installation des paquets réseau npm...
-updater.installSuccess=Paquets installés avec succès. Redémarrez pour valider.
-updater.backupSuccess=Fichiers écrasés sécurisés dans le dossier %1.
-updater.restartToApply=.. Redémarrez le système pour appliquer les modifications.
-updater.skipFile=Mise à jour ignorée volontairement pour le fichier %1 (%2).
+updater.updateTooFast=𝘓𝘦 𝘴𝘦𝘳𝘷𝘦𝘶𝘳 𝘦𝘴𝘵 𝘴𝘢𝘵𝘶𝘳𝘦́. 𝘝𝘦𝘶𝘪𝘭𝘭𝘦𝘻 𝘱𝘢𝘵𝘪𝘦𝘯𝘵𝘦𝘳 %1𝘮 %2𝘴 𝘢𝘷𝘢𝘯𝘵 𝘥𝘦 𝘳𝘦𝘭𝘢𝘯𝘤𝘦𝘳 𝘭𝘢 𝘮𝘪𝘴𝘦 𝘢̀ 𝘫𝘰𝘶𝘳.
+updater.latestVersion=𝘓𝘦 𝘴𝘺𝘴𝘵𝘦̀𝘮𝘦 𝘶𝘵𝘪𝘭𝘪𝘴𝘦 𝘥𝘦́𝘫𝘢̀ 𝘭𝘢 𝘷𝘦𝘳𝘴𝘪--𝘯 𝘭𝘢 𝘱𝘭𝘶𝘴 𝘳𝘦́𝘤𝘦𝘯𝘵𝘦.
+updater.cantFindVersion=𝘝𝘦𝘳𝘴𝘪--𝘯 𝘪𝘯𝘥𝘦́𝘵𝘦𝘳𝘮𝘪𝘯𝘦́𝘦 (%1) 𝘥𝘦́𝘵𝘦𝘤𝘵𝘦́𝘦 𝘥𝘢𝘯𝘴 𝘭𝘦 𝘧𝘪𝘤𝘩𝘪𝘦𝘳 𝘱𝘢𝘤𝘬𝘢𝘨𝘦.𝘫𝘴𝘰𝘯.
+updater.newVersions=%1 𝘮𝘪𝘴𝘦(𝘴) 𝘢̀ 𝘫𝘰𝘶𝘳 𝘥𝘪𝘴𝘱𝘰𝘯𝘪𝘣𝘭𝘦(𝘴). 𝘈𝘱𝘱𝘭𝘪𝘤𝘢𝘵𝘪--𝘯 𝘥𝘦𝘴 𝘤𝘰𝘳𝘳𝘦𝘤𝘵𝘪𝘧𝘴...
+updater.updateSuccess=𝘔𝘪𝘴𝘦 𝘢̀ 𝘫𝘰𝘶𝘳 𝘥𝘶 𝘴𝘺𝘴𝘵𝘦̀𝘮𝘦 𝘦𝘧𝘧𝘦𝘤𝘵𝘶𝘦́𝘦 𝘢𝘷𝘦𝘤 𝘴🇺🇨𝘤𝘦̀𝘴. %1
+updater.configChanged=𝘓𝘢 𝘴𝘵𝘳𝘶𝘤𝘵𝘶𝘳𝘦 𝘥𝘶 𝘧𝘪𝘤𝘩𝘪𝘦𝘳 %1 𝘢 𝘤𝘩𝘢𝘯𝘨𝘦́. 𝘝𝘦𝘶𝘪𝘭𝘭𝘦𝘻 𝘮𝘦𝘵𝘵𝘳𝘦 𝘢̀ 𝘫𝘰𝘶𝘳 𝘷𝘰𝘵𝘳𝘦 𝘧𝘪𝘤𝘩𝘪𝘦𝘳 𝘤𝘰𝘯𝘧𝘪𝘨.𝘫𝘴𝘰𝘯.
+updater.installingPackages=𝘐𝘯𝘴𝘵𝘢𝘭𝘭𝘢𝘵𝘪--𝘯 𝘥𝘦𝘴 𝘱𝘢𝘲𝘶𝘦𝘵𝘴 𝘥𝘦 𝘥𝘦́𝘱𝘦𝘯𝘥𝘢𝘯𝘤𝘦𝘴 𝘯𝘱𝘮...
+updater.installSuccess=𝘗𝘢𝘲𝘶𝘦𝘵𝘴 𝘪𝘯𝘴𝘵𝘢𝘭𝘭𝘦́𝘴 𝘢𝘷𝘦𝘤 𝘴🇺🇨𝘤𝘦̀𝘴. 𝘝𝘦𝘶𝘪𝘭𝘭𝘦𝘻 𝘳𝘦𝘥𝘦́𝘮𝘢𝘳𝘳𝘦𝘳 𝘱𝘰𝘶𝘳 𝘢𝘱𝘱𝘭𝘪𝘲𝘶𝘦𝘳.
+updater.backupSuccess=𝘈𝘯𝘤𝘪𝘦𝘯𝘴 𝘧𝘪𝘤𝘩𝘪𝘦𝘳𝘴 𝘴𝘢𝘶𝘷𝘦𝘨𝘢𝘳𝘥𝘦́𝘴 𝘢𝘷𝘦𝘤 𝘴🇺🇨𝘤𝘦̀𝘴 𝘥𝘢𝘯𝘴 𝘭𝘦 𝘥𝘰𝘴𝘴𝘪𝘦𝘳 %1.
+updater.restartToApply=𝘝𝘦𝘶𝘪𝘭𝘭𝘦𝘻 𝘳𝘦𝘥𝘦́𝘮𝘢𝘳𝘳𝘦𝘳 𝘭𝘦 𝘴𝘺𝘴𝘵𝘦̀𝘮𝘦 𝘱𝘰𝘶𝘳 𝘢𝘱𝘱𝘭𝘪𝘲𝘶𝘦𝘳 𝘭𝘦𝘴 𝘮𝘰𝘥𝘪𝘧𝘪𝘤𝘢𝘵𝘪--𝘯𝘴.
+updater.skipFile=𝘔𝘪𝘴𝘦 𝘢̀ 𝘫𝘰𝘶𝘳 𝘷𝘰𝘭𝘰𝘯𝘵𝘢𝘪𝘳𝘦𝘮𝘦𝘯𝘵 𝘪𝘨𝘯𝘰𝘳𝘦́𝘦 𝘱𝘰𝘶𝘳 𝘭𝘦 𝘧𝘪𝘤𝘩𝘪𝘦𝘳 %1 (%2).
 
 # dashboard/routes/verifyfbid.js
-verifyfbid.sendCode=Votre clé de sécurité éphémère :\n%1 (Valide %2 min)
+verifyfbid.sendCode=𝘝𝘰𝘵𝘳𝘦 𝘤𝘭𝘦́ 𝘥𝘦 𝘴𝘦́𝘤🇺🇨𝘳𝘪𝘵𝘦́ 𝘵𝘦𝘮𝘱𝘰𝘳𝘢𝘪𝘳𝘦 𝘦𝘴𝘵 :\n%1 (𝘝𝘢𝘭𝘪𝘥𝘦 𝘱𝘦𝘯𝘥𝘢𝘯𝘵 %2 𝘮𝘪𝘯)
 
 # utils.js
-utils.errorOccurred=❌ Défaillance du système :\n\n%1
+utils.errorOccurred=𝘜𝘯𝘦 𝘦𝘳𝘳𝘦𝘶𝘳 𝘪𝘯𝘵𝘦𝘳𝘯𝘦 𝘦𝘴𝘵 𝘴🇺🇨𝘳𝘷𝘦𝘯🇺🇨𝘦 :\n\n%1
 
 # for command
-command.restartedBot=Le système s'est réinitialisé avec succès.
+command.restartedBot=𝘓𝘦 𝘴𝘺𝘴𝘵𝘦̀𝘮𝘦 𝘢 𝘦́𝘵𝘦́ 𝘳𝘦𝘭𝘢𝘯𝘤𝘦́ 𝘢𝘷𝘦𝘤 𝘴🇺🇨𝘤𝘦̀𝘴.
 
 # dashboard/app.js
-app.googleApiRefreshTokenExpired=Jeton Google API expiré ou révoqué.
-app.tooManyRequests=Requêtes trop fréquentes. Flux temporairement restreint.
-app.notPermissionChangeFbstate=Modification de l'état système non autorisée.
-app.notFoundFbstate=Identifiants fbstate introuvables.
-app.changedFbstateSuccess=Clé de session (fbstate) mise à jour.
-app.serverError=Le serveur distant ne répond pas. Réessayez ultérieurement.
+app.googleApiRefreshTokenExpired=𝘓𝘦 𝘫𝘦𝘵𝘰𝘯 𝘥'𝘢𝘤𝘤𝘦̀𝘴 𝘎𝘰𝘰𝘨𝘭𝘦 𝘈𝘗𝘐 𝘢 𝘦𝘹𝘱𝘪𝘳𝘦́.
+app.tooManyRequests=𝘙𝘦𝘲𝘶𝘦̂𝘵𝘦𝘴 𝘵𝘳𝘰𝘱 𝘧𝘳𝘦́𝘲𝘶𝘦𝘯𝘵𝘦𝘴. 𝘍𝘭𝘶𝘹 𝘵𝘦𝘮𝘱𝘰𝘳𝘢𝘪𝘳𝘦𝘮𝘦𝘯𝘵 𝘳𝘦𝘴𝘵𝘳𝘦𝘪𝘯𝘵 𝘱𝘢𝘳 𝘴𝘦́𝘤🇺🇨𝘳𝘪𝘵𝘦́.
+app.notPermissionChangeFbstate=𝘓𝘢 𝘮𝘰𝘥𝘪𝘧𝘪𝘤𝘢𝘵i𝘰𝘯 𝘥𝘦 𝘭'𝘦́𝘵𝘢𝘵 𝘥🇺🇨 𝘴𝘺𝘴𝘵𝘦̀𝘮𝘦 𝘯'𝘦𝘴𝘵 𝘱𝘢𝘴 𝘢🇺🇨𝘵𝘰𝘳𝘪𝘴𝘦́𝘦.
+app.notFoundFbstate=𝘐𝘥𝘦𝘯𝘵if𝘪𝘢𝘯𝘵𝘴 𝘥𝘦 𝘴𝘦𝘴𝘴𝘪--𝘯 (𝘧𝘣𝘴𝘵𝘢𝘵𝘦) 𝘪𝘯𝘵𝘳𝘰𝘶𝘷𝘢𝘣𝘭𝘦𝘴.
+app.changedFbstateSuccess=𝘊𝘭𝘦́ 𝘥𝘦 𝘴𝘦𝘴𝘴𝘪--𝘯 (𝘧𝘣𝘴𝘵𝘢𝘵𝘦) 𝘮𝘪𝘴𝘦 𝘢̀ 𝘫𝘰𝘶𝘳 𝘢𝘷𝘦𝘤 𝘴🇺🇨𝘤𝘦̀𝘴.
+app.serverError=𝘓𝘦 𝘴𝘦𝘳𝘷𝘦𝘶𝘳 𝘥𝘪𝘴𝘵𝘢𝘯𝘵 𝘯𝘦 𝘳𝘦́𝘱𝘰𝘯𝘥 𝘱𝘢𝘴. 𝘝𝘦𝘶𝘪𝘭𝘭𝘦𝘻 𝘳𝘦́𝘦𝘴𝘴𝘢𝘺𝘦𝘳 𝘶𝘭𝘵𝘦́𝘳𝘪𝘦𝘶𝘳𝘦𝘮𝘦𝘯𝘵.
+
+# bot/handler/handlerCheckData.js
+handlerCheckData.cantCreateThread=𝘌́𝘤𝘩𝘦𝘤 𝘥𝘦 𝘭'𝘦𝘯𝘳𝘦𝘨𝘪𝘴𝘵𝘳𝘦𝘮𝘦𝘯𝘵 𝘥🇺🇨 𝘨𝘳𝘰𝘶𝘱𝘦 %1 𝘥𝘢𝘯𝘴 𝘭𝘢 𝘣𝘢𝘴𝘦 𝘥𝘦 𝘥𝘰𝘯𝘯𝘦́𝘦𝘴.
+handlerCheckData.cantCreateUser=𝘐𝘮𝘱𝘰𝘴𝘴𝘪𝘣𝘭𝘦 𝘥'𝘪𝘯𝘥𝘦𝘹𝘦𝘳 𝘭'𝘶𝘵𝘪𝘭𝘪𝘴𝘢𝘵𝘦𝘶𝘳 %1.
+
+# bot/handler/handlerEvents.js
+handlerEvents.userBanned=𝘏𝘦𝘺 @%2, 𝘵𝘰𝘯 𝘢𝘤𝘤𝘦̀𝘴 𝘢̀ 𝘤𝘦𝘵𝘵𝘦 𝘊𝘰𝘮𝘮𝘢𝘯𝘥𝘦 𝘦𝘴𝘵 𝘣𝘭𝘰𝘲𝘶𝘦́.\n» 𝘔𝘰𝘵𝘪𝘧 : %1\n» 𝘊𝘰𝘯𝘵𝘢𝘤𝘵𝘦 𝘶𝘯 𝘢𝘥𝘮𝘪𝘯𝘪𝘴𝘵𝘳𝘢𝘵𝘦𝘶𝘳 𝘴𝘪 𝘣𝘦𝘴𝘰𝘪𝘯.
+handlerEvents.threadBanned=𝘋𝘦́𝘴𝘰𝘭𝘦́, 𝘤𝘦 𝘨𝘳--𝘶𝘱𝘦 𝘦𝘴𝘵 𝘴🇺🇨𝘴𝘱𝘦𝘯𝘥🇺🇨 𝘥🇺🇨 𝘴𝘺𝘴𝘵𝘦̀𝘮𝘦.\n» 𝘔𝘰𝘵𝘪𝘧 : %1
+handlerEvents.onlyAdminBox=𝘈𝘤𝘤𝘦̀𝘴 𝘳𝘦𝘴𝘵𝘳𝘦𝘪𝘯𝘵. 𝘊𝘦𝘵𝘵𝘦 𝘊𝘰𝘮𝘮𝘢𝘯𝘥𝘦 𝘦𝘴𝘵 𝘶𝘵𝘪𝘭𝘪𝘴𝘢𝘣𝘭𝘦 𝘶𝘯𝘪𝘲𝘶𝘦𝘮𝘦𝘯𝘵 𝘱𝘢𝘳 𝘭𝘦𝘴 𝘢𝘥𝘮𝘪𝘯𝘴 𝘥🇺🇨 𝘨𝘳--𝘶𝘱𝘦.
+handlerEvents.onlyAdminBot=𝘊𝘰𝘮𝘮𝘢𝘯𝘥𝘦 𝘦𝘹𝘤𝘭𝘶𝘴𝘪𝘷𝘦, 𝘳𝘦́𝘴𝘦𝘳𝘷𝘦́𝘦 𝘶𝘯𝘪𝘲𝘶𝘦𝘮𝘦𝘯𝘵 𝘢🇺🇨𝘹 𝘥𝘦́𝘷𝘦𝘭𝘰𝘱𝘱𝘦𝘶𝘳𝘴.
+handlerEvents.commandNotFound=𝘏𝘦ย @%2, 𝘭𝘢 𝘊𝘰𝘮𝘮𝘢𝘯𝘥𝘦 [ %1 ] 𝘯'𝘦𝘹𝘪𝘴𝘵𝘦 𝘱𝘢𝘴.\n\n💡 𝘗𝘰𝘶𝘳 𝘵𝘳𝘰𝘶𝘷𝘦𝘳 𝘭𝘢 𝘣𝘰𝘯𝘯𝘦 𝘊𝘰𝘮𝘮𝘢𝘯𝘥𝘦 𝘦𝘵 𝘦̂𝘵𝘳𝘦 𝘰𝘳𝘪𝘦𝘯𝘵𝘦́, 𝘶𝘵𝘪𝘭𝘪𝘴𝘦 𝘱𝘭🇺🇨𝘵𝘰̂𝘵 : %3𝘩𝘦𝘭𝘱
+handlerEvents.commandNotFound2=𝘚𝘺𝘴𝘵𝘦̀𝘮𝘦 𝘦𝘯 𝘭𝘪𝘨𝘯𝘦. 𝘜𝘵𝘪𝘭𝘪𝘴𝘦 𝘭𝘦 𝘱𝘳𝘦́𝘧𝘪𝘲🇺🇨𝘦 𝘊𝘰𝘯𝘧𝘪𝘨🇺🇨𝘳𝘦́ 𝘴🇺🇨𝘪𝘷𝘪 𝘥𝘦 "𝘩𝘦𝘭𝘱" 𝘱𝘰𝘶𝘳 𝘢𝘧𝘧𝘪𝘤𝘩𝘦𝘳 𝘭𝘢 𝘭𝘪𝘴𝘵𝘦 𝘥𝘦𝘴 𝘮𝘰𝘥🇺🇨𝘭𝘦𝘴 𝘥𝘪𝘴𝘱𝘰𝘯𝘪𝘣𝘭𝘦𝘴.
+handlerEvents.commandSyntaxError=𝘏𝘦𝘺 @%2, 𝘭𝘢 𝘴𝘺𝘯𝘵𝘢𝘲𝘶𝘦 𝘦𝘴𝘵 𝘪𝘯𝘊𝘰𝘳𝘳𝘦𝘲𝘶𝘦.\n\n💡 𝘗𝘰𝘶𝘳 𝘢𝘱𝘗𝘳𝘦𝘯𝘥𝘳𝘦 𝘢̀ 𝘣𝘪𝘦𝘯 𝘭'𝘶𝘵𝘪𝘭𝘪𝘴𝘦𝘳, 𝘵𝘢𝘱𝘦 : %1𝘩𝘦𝘭𝘱 %2
+handlerEvents.onlyAdmin=𝘈𝘤𝘤𝘦̀𝘴 𝘳𝘦𝘧🇺🇨𝘴𝘦́. @%2, 𝘵🇺🇨 𝘥𝘰𝘪𝘴 𝘦̂𝘵𝘳𝘦 𝘢𝘥𝘮𝘪𝘯𝘪𝘴𝘵𝘳𝘢𝘵𝘦𝘶𝘳 𝘥🇺🇨 𝘨𝘳--𝘶𝘱𝘦 𝘱𝘰𝘶𝘳 𝘭𝘢𝘯𝘊𝘦𝘳 : "%1".
+handlerEvents.onlyAdminToUseOnReply=𝘊𝘦𝘵𝘵𝘦 𝘢𝘊𝘵𝘪--𝘯 𝘯'𝘦𝘴𝘵 𝘱𝘢𝘴 𝘢𝘊𝘊𝘦́𝘴𝘴𝘪𝘣𝘭𝘦 𝘢🇺🇨𝘹 𝘮𝘦𝘮𝘣𝘳𝘦𝘴 𝘴𝘵𝘢𝘯𝘥𝘢𝘳𝘥𝘴.
+handlerEvents.onlyAdminToUseOnReaction=𝘊𝘦𝘵𝘵𝘦 𝘪𝘯𝘵𝘦𝘳𝘢𝘊𝘵𝘪--𝘯 𝘦𝘴𝘵 𝘭𝘪𝘮𝘪𝘵𝘦́𝘦 𝘢🇺🇨𝘹 𝘢𝘥𝘮𝘪𝘯𝘪𝘴𝘵𝘳𝘢𝘵𝘦𝘶𝘳𝘴 𝘥🇺🇨 𝘨𝘳--𝘶𝘱𝘦 (%1).
+handlerEvents.onlyAdminBot2=𝘋𝘦́𝘴𝘰𝘭𝘦́ @%2, 𝘵🇺🇨 𝘯𝘦 𝘥𝘪𝘴𝘱𝘰𝘴𝘦𝘴 𝘱𝘢𝘴 𝘥𝘦𝘴 𝘢🇺🇨𝘵𝘰𝘳𝘪𝘴𝘢𝘵𝘪--𝘯𝘴 𝘳𝘦𝘲🇺🇨𝘪𝘴𝘦𝘴 𝘱𝘰𝘶𝘳 𝘭𝘢 𝘊𝘰𝘮𝘮𝘢𝘯𝘥𝘦 [ %1 ].
+handlerEvents.onlyAdminBot2ToUseOnReply=𝘊𝘦𝘵𝘵𝘦 𝘰𝘱𝘵𝘪--𝘯 𝘦𝘴𝘵 𝘳𝘦́𝘴𝘦𝘳𝘷𝘦́𝘦 𝘢🇺🇨𝘹 𝘢𝘥𝘮𝘪𝘯𝘪𝘴𝘵𝘳𝘢𝘵𝘦𝘶𝘳𝘴 𝘨𝘦́𝘯𝘦́𝘳𝘢🇺🇨𝘹 𝘥🇺🇨 𝘴𝘺𝘴𝘵𝘦̀𝘮𝘦.
+handlerEvents.onlyAdminBot2ToUseOnReaction=𝘊𝘦𝘵𝘵𝘦 𝘪𝘯𝘵𝘦𝘳𝘢𝘊𝘵𝘪--𝘯 𝘦𝘴𝘵 𝘳𝘦́𝘴𝘦𝘳𝘷𝘦́𝘦 𝘦𝘯 𝘦𝘹𝘊𝘭🇺🇨𝘴𝘪𝘷𝘪𝘵𝘦́ 𝘢🇺🇨𝘹 𝘊𝘳𝘦́𝘢𝘵𝘦🇺🇨𝘳𝘴.
+handlerEvents.waitingForCommand=𝘜𝘯 𝘪𝘯𝘴𝘵𝘢𝘯𝘵 @%2, 𝘱𝘢𝘵𝘪𝘦𝘯𝘵𝘦 𝘦𝘯𝘊𝘰𝘳𝘦 %1𝘴 𝘢𝘷𝘢𝘯𝘵 𝘥𝘦 𝘗𝘰𝘶𝘷𝘰𝘪𝘳 𝘳𝘦́𝘶𝘵𝘪𝘭𝘪𝘴𝘦𝘳 𝘊𝘦𝘵𝘵𝘦 𝘊𝘰𝘮𝘮𝘢𝘯𝘥𝘦.
+handlerEvents.errorOccurred=𝘖🇺🇨𝘱𝘴 @%4, 𝘶𝘯𝘦 𝘦𝘳𝘳𝘦🇺🇨𝘳 𝘦𝘴𝘵 𝘴🇺🇨𝘳𝘷𝘦𝘯🇺🇨𝘦 𝘴🇺🇨𝘳 𝘭𝘦 𝘮𝘰𝘥🇺🇨𝘭𝘦 "%2".\n\n💡 𝘝𝘦́𝘳𝘪𝘧𝘪𝘦 𝘭'𝘢𝘪𝘥𝘦 𝘢𝘷𝘦𝘤 : %1𝘩𝘦𝘭𝘱\n\n𝘋𝘦́𝘵𝘢𝘪𝘭𝘴 : %3
+handlerEvents.errorOccurred2=𝘌𝘳𝘳𝘦🇺🇨𝘳 𝘥'𝘦𝘹𝘦́𝘊🇺🇨𝘵𝘪--𝘯 (𝘰𝘯𝘊𝘩𝘢𝘵) 𝘥𝘦́𝘵𝘦𝘛𝘵𝘦́𝘦 𝘴🇺🇨𝘳 𝘭𝘦 𝘮𝘰𝘥🇺🇨𝘭𝘦 "%2", @%4. 𝘜𝘵𝘪𝘭𝘪𝘴𝘦 𝘭a 𝘊𝘰𝘮𝘮𝘢𝘯𝘥𝘦 𝘥'𝘢𝘪𝘥𝘦 𝘱𝘰𝘶𝘳 𝘦̂𝘵𝘳𝘦 𝘰𝘳𝘪𝘦𝘯𝘵𝘦́.\n\n𝘋𝘦́...𝘢𝘪𝘭𝘴 : %3
+handlerEvents.errorOccurred3=𝘌́𝘊𝘩𝘦𝘊 𝘥𝘦 𝘭𝘢 𝘳𝘦́𝘱--𝘯𝘴𝘦 (𝘰𝘯𝘙𝘦𝘗𝘭𝘺) 𝘴🇺🇨𝘳 𝘭𝘦 𝘮𝘰𝘥🇺🇨𝘭𝘦 "%2", @%4. 𝘑𝘦𝘵𝘵𝘦 𝘶𝘯 𝘰œil 𝘢̀ 𝘭𝘢 𝘊𝘰𝘮𝘮𝘢𝘯𝘥𝘦 𝘥'𝘢𝘪𝘥𝘦 𝘱𝘰𝘶𝘳 𝘵𝘳𝘰𝘶𝘷𝘦𝘳 𝘭'𝘢𝘭𝘵𝘦𝘳𝘯𝘢𝘵𝘪𝘷𝘦.\n\n𝘋𝘦́𝘵𝘢𝘪𝘭𝘴 : %3
+handlerEvents.errorOccurred4=𝘈𝘊𝘵𝘪--𝘯 𝘢𝘯𝘯🇺🇨𝘭𝘦́𝘦 𝘱𝘢𝘳 𝘳𝘦́𝘢𝘊𝘵𝘪--𝘯 𝘴🇺🇨𝘳 𝘭𝘦 𝘮𝘰𝘥🇺🇨𝘭𝘦 "%2", @%4.\n\n𝘋𝘦́𝘵𝘢𝘪𝘭𝘴 : %3
+handlerEvents.errorOccurred5=𝘋𝘺𝘴𝘧𝘰𝘯𝘊𝘵𝘪--𝘯𝘯𝘦𝘮𝘦𝘯𝘵 𝘢🇺🇨 𝘯𝘪𝘷𝘦𝘢🇺🇨 𝘥𝘦 𝘭'𝘦́𝘷𝘦́𝘯𝘦𝘮𝘦𝘯𝘵 (𝘰𝘯𝘌𝘷𝘦𝘯𝘵) 𝘴🇺🇨𝘳 𝘭𝘦 𝘮𝘰𝘥🇺🇨xl𝘦 "%2", @%4.\n\n𝘋𝘦́...𝘢𝘪𝘭𝘴 : %3
+handlerEvents.errorOccurred6=𝘐𝘯𝘵𝘦𝘳𝘳🇺🇨𝘱𝘵𝘪--𝘯 𝘪𝘯𝘵𝘦𝘳𝘯𝘦 𝘥𝘦́𝘵𝘦𝘛𝘵𝘦́𝘦 𝘴🇺🇨𝘳 𝘭'𝘦́𝘷𝘦́𝘯𝘦𝘮𝘦𝘯𝘵 "%2", @%4.\n\n𝘋𝘦́𝘵𝘢𝘪𝘭𝘴 : %3
+handlerEvents.errorOccurred7=𝘌𝘹𝘊𝘦𝘱𝘵𝘪--𝘯 𝘨𝘦́𝘯𝘦́𝘳𝘦́𝘦 𝘴🇺🇨𝘳 𝘭𝘦 𝘮𝘰𝘥🇺🇨𝘭𝘦 "%2", @%4.\n\n𝘋𝘦́𝘵𝘢𝘪xl𝘴 : %3
+handlerEvents.cannotFindCommandName=𝘐𝘮𝘱𝘰𝘴𝘴𝘪𝘣𝘭𝘦 𝘥'𝘪𝘥𝘦𝘯𝘵𝘪𝘧𝘪𝘦𝘳 𝘭𝘦 𝘮𝘰𝘥🇺🇨𝘭𝘦 𝘥'𝘰𝘳𝘪𝘨𝘪𝘯𝘦.
+handlerEvents.cannotFindCommand=𝘓𝘦 𝘮𝘰𝘥🇺🇨𝘭𝘦 "%1" 𝘦𝘴𝘵 𝘪𝘯𝘵𝘳𝘰𝘶𝘷𝘢𝘣𝘭𝘦 𝘰🇺🇨 𝘢𝘊𝘵🇺🇨𝘦𝘭𝘭𝘦𝘮𝘦𝘯𝘵 𝘥𝘦́𝘴𝘢𝘊𝘵𝘪𝘷𝘦́.
