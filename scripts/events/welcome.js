@@ -1,22 +1,17 @@
 const { createCanvas, loadImage } = require('canvas');
 const fs = require('fs-extra');
 const path = require('path');
+const axios = require('axios');
 
 function getMaisonNeonColor(type) {
-  if (type === "welcome") {
-    const welcomeHues = [45, 195, 210]; 
-    return `hsl(${welcomeHues[Math.floor(Math.random() * welcomeHues.length)]}, 100%, 55%)`;
-  } else {
-    const leaveHues = [0, 340, 280]; 
-    return `hsl(${leaveHues[Math.floor(Math.random() * leaveHues.length)]}, 100%, 50%)`;
-  }
+  return type === "welcome" ? "#3b82f6" : "#ef4444"; // Bleu moderne vs Rouge moderne
 }
 
 module.exports = {
   config: {
     name: "welcome",
-    version: "4.5",
-    author: "Saimx69x x Célestin 🔥 (Optimized)",
+    version: "5.0",
+    author: "Saimx69x x Célestin (Optimized & Modernized)",
     category: "events"
   },
 
@@ -26,9 +21,9 @@ module.exports = {
 
     if (logMessageType !== "log:subscribe" && logMessageType !== "log:unsubscribe") return;
 
-    // Récupération rapide des infos du groupe
+    // Récupération des infos du groupe
     const threadInfo = await api.getThreadInfo(threadID);
-    const groupName = threadInfo.threadName || "Sanctuaire";
+    const groupName = threadInfo.threadName || "Groupe";
     const memberCount = threadInfo.participantIDs.length;
     const nicknames = threadInfo.nicknames || {};
 
@@ -36,47 +31,42 @@ module.exports = {
     await fs.ensureDir(tmp);
 
     async function generateMaisonCanvas(userId, displayName, type) {
-      const canvas = createCanvas(900, 450);
+      const canvas = createCanvas(900, 400);
       const ctx = canvas.getContext('2d');
-      const neonColor = getMaisonNeonColor(type);
+      const accentColor = getMaisonNeonColor(type);
 
-      // 1. Fond Noir Profond
-      ctx.fillStyle = "#040406";
+      // 1. Fond Minimaliste Sombre
+      ctx.fillStyle = "#0f172a"; 
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      let radialGrad = ctx.createRadialGradient(450, 225, 100, 450, 225, 500);
-      radialGrad.addColorStop(0, "rgba(20, 15, 30, 0.3)");
-      radialGrad.addColorStop(1, "#000000");
-      ctx.fillStyle = radialGrad;
+      let gradient = ctx.createRadialGradient(450, 200, 50, 450, 200, 450);
+      gradient.addColorStop(0, "rgba(30, 41, 59, 0.6)");
+      gradient.addColorStop(1, "#0f172a");
+      ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // 2. Grille
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.02)";
+      // 2. Bordures épurées
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.05)";
       ctx.lineWidth = 1;
-      for (let i = 0; i < canvas.width; i += 45) {
-        ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, canvas.height); ctx.stroke();
-      }
+      ctx.strokeRect(20, 20, 860, 360);
 
-      // 3. Cadre Principal
-      ctx.fillStyle = "rgba(15, 15, 22, 0.7)";
-      ctx.fillRect(35, 35, 830, 380);
+      ctx.fillStyle = accentColor;
+      ctx.fillRect(20, 20, 6, 360);
 
-      ctx.strokeStyle = neonColor;
-      ctx.lineWidth = 4;
-      ctx.strokeRect(35, 35, 830, 380);
-
-      ctx.fillStyle = neonColor;
-      const cSize = 20;
-      ctx.fillRect(30, 30, cSize, 6); ctx.fillRect(30, 30, 6, cSize);
-      ctx.fillRect(900 - 30 - cSize, 30, cSize, 6); ctx.fillRect(900 - 30, 30, 6, cSize);
-      ctx.fillRect(30, 450 - 30, cSize, 6); ctx.fillRect(30, 450 - 30 - cSize, 6, cSize);
-      ctx.fillRect(900 - 30 - cSize, 450 - 30, cSize, 6); ctx.fillRect(900 - 30, 450 - 30 - cSize, 6, cSize);
-
-      // 4. Avatar (Fallback rapide sans token si graph FB bloque)
-      const avatarUrl = `https://graph.facebook.com/${userId}/picture?width=300&height=300`;
-      const avX = 85, avY = 115, avSize = 220;
+      // 3. Téléchargement sécurisé de la photo de profil (Contourne le blocage FB)
+      const avX = 70, avY = 85, avSize = 230;
+      
       try {
-        const userAvatar = await loadImage(avatarUrl);
+        const avatarUrl = `https://graph.facebook.com/${userId}/picture?width=400&height=400`;
+        const response = await axios.get(avatarUrl, {
+          responseType: 'arraybuffer',
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+          }
+        });
+
+        const userAvatar = await loadImage(Buffer.from(response.data));
+        
         ctx.save();
         ctx.beginPath();
         ctx.arc(avX + avSize / 2, avY + avSize / 2, avSize / 2, 0, Math.PI * 2, true);
@@ -84,67 +74,62 @@ module.exports = {
         ctx.drawImage(userAvatar, avX, avY, avSize, avSize);
         ctx.restore();
 
-        ctx.strokeStyle = '#ffffff';
-        ctx.lineWidth = 2;
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.1)";
+        ctx.lineWidth = 3;
         ctx.beginPath();
-        ctx.arc(avX + avSize / 2, avY + avSize / 2, avSize / 2 + 2, 0, Math.PI * 2);
-        ctx.stroke();
-
-        ctx.strokeStyle = neonColor;
-        ctx.lineWidth = 4;
-        ctx.beginPath();
-        ctx.arc(avX + avSize / 2, avY + avSize / 2, avSize / 2 + 7, 0, Math.PI * 2);
+        ctx.arc(avX + avSize / 2, avY + avSize / 2, avSize / 2 + 1, 0, Math.PI * 2);
         ctx.stroke();
       } catch (e) {
-        ctx.fillStyle = neonColor;
-        ctx.beginPath(); ctx.arc(avX + avSize / 2, avY + avSize / 2, avSize / 2, 0, Math.PI * 2); ctx.fill();
+        // Fallback propre avec initiales si FB bloque quand même l'ID
+        ctx.fillStyle = "rgba(255, 255, 255, 0.05)";
+        ctx.beginPath(); 
+        ctx.arc(avX + avSize / 2, avY + avSize / 2, avSize / 2, 0, Math.PI * 2); 
+        ctx.fill();
+        
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "bold 80px system-ui, sans-serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(displayName.charAt(0).toUpperCase(), avX + avSize / 2, avY + avSize / 2);
+        ctx.textAlign = "left"; 
       }
 
-      // 5. Décors
-      ctx.fillStyle = "rgba(255, 255, 255, 0.15)";
-      ctx.font = '14px "Courier New"';
-      ctx.fillText("SYSTEM // SECURE_GATE_LOG", 360, 70);
+      // 4. Textes Modernes
+      let txtName = displayName.length > 20 ? displayName.substring(0, 18) + ".." : displayName;
 
-      // 6. Rendu des textes avec le Pseudo (displayName)
       if (type === "welcome") {
-        ctx.fillStyle = neonColor;
-        ctx.font = "bold 44px 'Impact', sans-serif";
-        ctx.fillText("🖤 NOUVEAU SHINOBI 🖤", 360, 130);
+        ctx.fillStyle = accentColor;
+        ctx.font = "bold 14px system-ui, sans-serif";
+        ctx.fillText("NOUVEL ARRIVANT", 350, 110);
 
         ctx.fillStyle = '#ffffff';
-        ctx.font = "bold 28px 'Arial', sans-serif";
-        let txtName = displayName.length > 20 ? displayName.substring(0, 18) + ".." : displayName;
-        ctx.fillText(`👤 NOM : ${txtName.toUpperCase()}`, 360, 195);
+        ctx.font = "bold 38px system-ui, sans-serif";
+        ctx.fillText(txtName, 350, 160);
 
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-        ctx.font = "20px 'Courier New', monospace";
-        let txtGroup = groupName.length > 20 ? groupName.substring(0, 18) + ".." : groupName;
-        ctx.fillText(`🏠 SECTEUR : ${txtGroup.toUpperCase()}`, 360, 250);
-
-        ctx.fillStyle = neonColor;
-        ctx.font = "bold 24px 'Impact', sans-serif";
-        ctx.fillText(`⚔️ CHAKRA SOUCHE N° : ${memberCount}`, 360, 310);
-
-        ctx.fillStyle = '#ffffff';
-        ctx.font = 'italic 16px "Arial"';
-        ctx.fillText("✦ Intègre la lignée et développe ton jutsu.", 360, 365);
-      } else {
-        ctx.fillStyle = neonColor;
-        ctx.font = "bold 44px 'Impact', sans-serif";
-        ctx.fillText("🚪 QUITTÉ LA MAISON 🚪", 360, 130);
-
-        ctx.fillStyle = '#ffffff';
-        ctx.font = "bold 28px 'Arial', sans-serif";
-        let txtName = displayName.length > 20 ? displayName.substring(0, 18) + ".." : displayName;
-        ctx.fillText(`👤 ${txtName.toUpperCase()}`, 360, 195);
+        ctx.fillStyle = '#94a3b8'; 
+        ctx.font = "500 18px system-ui, sans-serif";
+        let txtGroup = groupName.length > 25 ? groupName.substring(0, 23) + ".." : groupName;
+        ctx.fillText(`Bienvenue dans ${txtGroup}`, 350, 205);
 
         ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
-        ctx.font = "20px 'Courier New', monospace";
-        ctx.fillText("❌ Sceau brisé, retour à l'ombre...", 360, 255);
+        ctx.font = "14px system-ui, sans-serif";
+        ctx.fillText(`Membre #${memberCount}`, 350, 280);
+      } else {
+        ctx.fillStyle = accentColor;
+        ctx.font = "bold 14px system-ui, sans-serif";
+        ctx.fillText("DÉPART", 350, 110);
 
-        ctx.fillStyle = neonColor;
-        ctx.font = "bold 24px 'Impact', sans-serif";
-        ctx.fillText(`👥 EFFECTIF RESTANT : ${memberCount} UNITÉS`, 360, 315);
+        ctx.fillStyle = '#ffffff';
+        ctx.font = "bold 38px system-ui, sans-serif";
+        ctx.fillText(txtName, 350, 160);
+
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = "500 18px system-ui, sans-serif";
+        ctx.fillText("A quitté la communauté.", 350, 205);
+
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+        ctx.font = "14px system-ui, sans-serif";
+        ctx.fillText(`Effectif restant : ${memberCount}`, 350, 280);
       }
 
       const imagePath = path.join(tmp, `maison_${type}_${userId}.png`);
@@ -164,25 +149,24 @@ module.exports = {
           botName = global.GoatBot.config.nickNameBot;
         }
         try {
-          await api.changeNickname(`✧ ${botName} ✧`, threadID, botID);
+          await api.changeNickname(`[ BOT ] ${botName}`, threadID, botID);
         } catch (e) {
-          console.log(e);
+          console.error(e);
         }
 
         return api.sendMessage(
-          `🖤 ━━━ MAISON CASSIDY ━━━ 🖤\n🤖 ÉVEIL DU SYSTÈME\n\nSceau d'invocation réussi. Je suis connecté au groupe.\n⚙️ Tapez "help" pour ouvrir le grimoire des commandes.`,
+          `✦ Initialisation de ${botName} réussie.\nUtilisez la commande "help" pour afficher la liste des outils disponibles.`,
           threadID
         );
       }
 
       for (const user of newUsers) {
         try {
-          // Vérifie si l'utilisateur possède déjà un pseudo (surnom) enregistré dans le groupe
           const displayName = nicknames[user.userFbId] || user.fullName;
           const imagePath = await generateMaisonCanvas(user.userFbId, displayName, "welcome");
 
           await api.sendMessage({
-            body: `🖤 [ ᴍᴀɪsᴏɴ ᴄᴀssɪᴅʏ ] Sceau d'entrée activé pour ${displayName}. Bienvenue au sanctuaire !`,
+            body: `Bonjour ${displayName}, bienvenue dans le groupe !`,
             attachment: fs.createReadStream(imagePath),
             mentions: [{ tag: displayName, id: user.userFbId }]
           }, threadID);
@@ -205,13 +189,13 @@ module.exports = {
         let displayName = nicknames[leftUser];
         if (!displayName) {
           const userInfo = await api.getUserInfo(leftUser);
-          displayName = userInfo[leftUser]?.name || "Un ninja";
+          displayName = userInfo[leftUser]?.name || "Un utilisateur";
         }
 
         const imagePath = await generateMaisonCanvas(leftUser, displayName, "leave");
 
         await api.sendMessage({
-          body: `🚪 [ ᴍᴀɪsᴏɴ ᴄᴀssɪᴅʏ ] ${displayName} s'est effacé dans l'ombre et a quitté les rangs.`,
+          body: `${displayName} a quitté le groupe.`,
           attachment: fs.createReadStream(imagePath)
         }, threadID);
 
