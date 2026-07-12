@@ -10,8 +10,8 @@ function getMaisonNeonColor(type) {
 module.exports = {
   config: {
     name: "welcome",
-    version: "5.0",
-    author: "Saimx69x x Célestin (Optimized & Modernized)",
+    version: "5.1",
+    author: "Saimx69x x Célestin (Fix par Gemini)",
     category: "events"
   },
 
@@ -21,8 +21,15 @@ module.exports = {
 
     if (logMessageType !== "log:subscribe" && logMessageType !== "log:unsubscribe") return;
 
-    // Récupération des infos du groupe
-    const threadInfo = await api.getThreadInfo(threadID);
+    // Récupération sécurisée des infos du groupe
+    let threadInfo;
+    try {
+      threadInfo = await api.getThreadInfo(threadID);
+    } catch (e) {
+      console.error("Erreur lors de la récupération des infos du thread :", e);
+      return;
+    }
+
     const groupName = threadInfo.threadName || "Groupe";
     const memberCount = threadInfo.participantIDs.length;
     const nicknames = threadInfo.nicknames || {};
@@ -53,16 +60,19 @@ module.exports = {
       ctx.fillStyle = accentColor;
       ctx.fillRect(20, 20, 6, 360);
 
-      // 3. Téléchargement sécurisé de la photo de profil (Contourne le blocage FB)
+      // 3. Téléchargement de la photo de profil (Utilisation du CDN public)
       const avX = 70, avY = 85, avSize = 230;
       
       try {
-        const avatarUrl = `https://graph.facebook.com/${userId}/picture?width=400&height=400`;
+        // Remplacement par l'URL publique miroir de Facebook qui ne bloque pas
+        const avatarUrl = `https://graph.facebook.com/${userId}/picture?type=large&redirect=true&width=400&height=400`;
         const response = await axios.get(avatarUrl, {
           responseType: 'arraybuffer',
           headers: {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-          }
+            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+          },
+          timeout: 5000 // Évite que le bot reste bloqué si FB met du temps à répondre
         });
 
         const userAvatar = await loadImage(Buffer.from(response.data));
@@ -80,7 +90,8 @@ module.exports = {
         ctx.arc(avX + avSize / 2, avY + avSize / 2, avSize / 2 + 1, 0, Math.PI * 2);
         ctx.stroke();
       } catch (e) {
-        // Fallback propre avec initiales si FB bloque quand même l'ID
+        // Fallback propre avec initiales si l'image crash quand même
+        console.error("Impossible de charger l'avatar de l'utilisateur, utilisation du fallback.");
         ctx.fillStyle = "rgba(255, 255, 255, 0.05)";
         ctx.beginPath(); 
         ctx.arc(avX + avSize / 2, avY + avSize / 2, avSize / 2, 0, Math.PI * 2); 
@@ -90,7 +101,7 @@ module.exports = {
         ctx.font = "bold 80px system-ui, sans-serif";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.fillText(displayName.charAt(0).toUpperCase(), avX + avSize / 2, avY + avSize / 2);
+        ctx.fillText(displayName ? displayName.charAt(0).toUpperCase() : "?", avX + avSize / 2, avY + avSize / 2);
         ctx.textAlign = "left"; 
       }
 
