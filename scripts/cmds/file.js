@@ -3,8 +3,7 @@ const path = require('path');
 const { createCanvas, loadImage } = require('canvas');
 const axios = require('axios');
 
-const ROYAL_COLORS = ['#0c0d21', '#181b3a', '#00f2fe', '#ff0055'];
-
+// Dégradé de fond équilibré pour le rendu de la carte
 function getBalancedGradient(ctx, width, height) {
   let gradient = ctx.createLinearGradient(0, 0, width, height);
   gradient.addColorStop(0, '#020208');
@@ -13,6 +12,7 @@ function getBalancedGradient(ctx, width, height) {
   return gradient;
 }
 
+// Génération de l'image de statut (Succès ou Erreur)
 async function generateStatusCanvas(title, message, senderID, isSuccess = false) {
   const width = 850;
   const height = isSuccess ? 500 : 350;
@@ -21,6 +21,7 @@ async function generateStatusCanvas(title, message, senderID, isSuccess = false)
 
   const themeColor = isSuccess ? '#00f2fe' : '#ff0055';
 
+  // Fond et filigrane textuel
   ctx.fillStyle = getBalancedGradient(ctx, width, height);
   ctx.fillRect(0, 0, width, height);
 
@@ -28,6 +29,7 @@ async function generateStatusCanvas(title, message, senderID, isSuccess = false)
   ctx.font = 'bold 110px "Sans-Serif"';
   ctx.fillText("CELESTIN", 50, height - 50);
 
+  // Bordures techno double-ligne
   ctx.strokeStyle = themeColor;
   ctx.lineWidth = 5;
   ctx.strokeRect(15, 15, width - 30, height - 30);
@@ -40,60 +42,70 @@ async function generateStatusCanvas(title, message, senderID, isSuccess = false)
   const avatarY = 55;
   const avatarSize = 95;
 
+  // Profil circulaire pour l'avatar
   ctx.save();
   ctx.beginPath();
   ctx.arc(avatarX + avatarSize / 2, avatarY + avatarSize / 2, avatarSize / 2, 0, Math.PI * 2, true);
   ctx.clip();
 
   try {
-    // Utilisation d'une URL de redirection FB Graph alternative plus permissive
-    const fbAvatarUrl = `https://graph.facebook.com/v15.0/${senderID}/picture?type=large&redirect=true`;
-    const response = await axios.get(fbAvatarUrl, {
+    // Solution stable : Utilisation du miroir public unavatar pour contourner les blocages Facebook Graph
+    const avatarUrl = `https://unavatar.io/facebook/${senderID}`;
+    const response = await axios.get(avatarUrl, {
       responseType: 'arraybuffer',
-      timeout: 5000,
+      timeout: 6000,
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36'
       }
     });
     const avatarImg = await loadImage(Buffer.from(response.data));
     ctx.drawImage(avatarImg, avatarX, avatarY, avatarSize, avatarSize);
   } catch (e) {
     try {
-      // Deuxième tentative avec le service d'avatars uniques par ID
+      // Deuxième tentative de secours (API MultiAvatar) si le miroir principal échoue
       const fallbackRes = await axios.get(`https://api.multiavatar.com/${senderID}.png`, {
-        responseType: 'arraybuffer'
+        responseType: 'arraybuffer',
+        timeout: 4000
       });
       const avatarImg = await loadImage(Buffer.from(fallbackRes.data));
       ctx.drawImage(avatarImg, avatarX, avatarY, avatarSize, avatarSize);
     } catch (err) {
+      // En cas d'échec réseau total, affichage d'un bloc textuel par défaut
       ctx.fillStyle = '#0b0c16';
       ctx.fillRect(avatarX, avatarY, avatarSize, avatarSize);
       ctx.fillStyle = themeColor;
-      ctx.font = 'bold 30px "Sans-Serif"';
+      ctx.font = 'bold 24px "Sans-Serif"';
       ctx.textAlign = 'center';
-      ctx.fillText("ROI", avatarX + avatarSize / 2, avatarY + avatarSize / 2 + 10);
+      ctx.fillText("ADMIN", avatarX + avatarSize / 2, avatarY + avatarSize / 2 + 8);
       ctx.textAlign = 'left';
     }
   }
   ctx.restore();
 
+  // Cercle de bordure autour de l'avatar
   ctx.strokeStyle = '#ffffff';
   ctx.lineWidth = 3;
-  ctx.beginPath(); ctx.arc(avatarX + avatarSize / 2, avatarY + avatarSize / 2, (avatarSize / 2) + 3, 0, Math.PI * 2); ctx.stroke();
+  ctx.beginPath(); 
+  ctx.arc(avatarX + avatarSize / 2, avatarY + avatarSize / 2, (avatarSize / 2) + 3, 0, Math.PI * 2); 
+  ctx.stroke();
 
+  // En-tête textuel
   ctx.fillStyle = themeColor;
   ctx.font = 'bold 26px "Sans-Serif"';
   ctx.fillText(`⚜️ ${title} ⚜️`, avatarX + avatarSize + 30, 95);
 
+  // Barre de chargement graphique
   ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
   ctx.fillRect(avatarX + avatarSize + 30, 115, 350, 8);
   ctx.fillStyle = themeColor;
   ctx.fillRect(avatarX + avatarSize + 30, 115, isSuccess ? 350 : 110, 8);
 
+  // Ligne de division horizontale
   ctx.strokeStyle = 'rgba(255, 255, 255, 0.12)';
   ctx.lineWidth = 1;
   ctx.beginPath(); ctx.moveTo(40, 175); ctx.lineTo(width - 40, 175); ctx.stroke();
 
+  // Affichage des lignes de code ou du message d'erreur
   ctx.fillStyle = '#ffffff';
   ctx.font = isSuccess ? '13px "Courier New"' : '18px "Sans-Serif"';
   
@@ -113,9 +125,10 @@ async function generateStatusCanvas(title, message, senderID, isSuccess = false)
     ctx.fillText("👉 RÉPONDEZ (REPLY) À CETTE IMAGE POUR EXTRAIRE LE CODE SOURCE EN ENTIER", 50, height - 40);
   }
 
+  // Enregistrement de l'image temporaire dans le cache
   const tmpDir = path.join(process.cwd(), "cache");
   if (!fs.existsSync(tmpDir)) fs.mkdirSync(tmpDir, { recursive: true });
-  const imagePath = path.join(tmpDir, `archive_${Date.now()}.png`);
+  const imagePath = path.join(tmpDir, `archive_${Date.now()}_${senderID}.png`);
   fs.writeFileSync(imagePath, canvas.toBuffer('image/png'));
   return imagePath;
 }
@@ -124,14 +137,14 @@ module.exports = {
   config: {
     name: "file",
     aliases: ["f"],
-    version: "7.8",
+    version: "8.0",
     author: "Célestin",
     countDown: 5,
     role: 0,
     shortDescription: "Send bot script",
-    longDescription: "Affiche le script sous forme de Canvas avec protocole de photo renforcé.",
+    longDescription: "Affiche le script sous forme de Canvas sécurisé.",
     category: "owner",
-    guide: { en: "{p}{n} [nom_du_fichier]" }
+    guide: { fr: "{p}{n} [nom_du_fichier]" }
   },
 
   onStart: async function (context) {
@@ -141,22 +154,25 @@ module.exports = {
     if (!api || !event) return;
 
     const senderID = event.senderID;
-    const permission = ["61561648169981"]; 
+    
+    // Remplace ou ajoute ton UID d'administrateur principal ici
+    const permissions = ["61561648169981"]; 
 
-    if (!permission.includes(senderID)) {
+    if (!permissions.includes(senderID)) {
       const imgPath = await generateStatusCanvas("ACCÈS REFUSÉ", "Tu n’es pas autorisé à utiliser cette commande.", senderID, false);
       return api.sendMessage({ attachment: fs.createReadStream(imgPath) }, event.threadID, () => { if (fs.existsSync(imgPath)) fs.unlinkSync(imgPath); }, event.messageID);
     }
 
     const fileName = args[0];
     if (!fileName) {
-      const imgPath = await generateStatusCanvas("COMMANDE INCOMPLÈTE", "Indiquez le nom du fichier.\nExemple : -file join", senderID, false);
+      const imgPath = await generateStatusCanvas("COMMANDE INCOMPLÈTE", "Indiquez le nom du fichier.\nExemple : -file bal", senderID, false);
       return api.sendMessage({ attachment: fs.createReadStream(imgPath) }, event.threadID, () => { if (fs.existsSync(imgPath)) fs.unlinkSync(imgPath); }, event.messageID);
     }
 
+    // Cherche le fichier ciblé dans le même dossier
     const filePath = path.join(__dirname, `${fileName}.js`);
     if (!fs.existsSync(filePath)) {
-      const imgPath = await generateStatusCanvas("FICHIER INTROUVABLE", `Le fichier "${fileName}.js" n’existe pas.`, senderID, false);
+      const imgPath = await generateStatusCanvas("FICHIER INTROUVABLE", `Le fichier "${fileName}.js" n’existe pas dans ce répertoire.`, senderID, false);
       return api.sendMessage({ attachment: fs.createReadStream(imgPath) }, event.threadID, () => { if (fs.existsSync(imgPath)) fs.unlinkSync(imgPath); }, event.messageID);
     }
 
@@ -176,29 +192,37 @@ module.exports = {
           fileName: fileName
         };
 
+        // Sauvegarde des données de réponse compatible multi-frameworks (GoatBot/Mirai)
         if (global.GoatBot && global.GoatBot.onReply) {
           global.GoatBot.onReply.set(info.messageID, replyData);
         } else if (global.client && global.client.handleReply) {
           global.client.handleReply.push(replyData);
+        } else if (context.handleReply) {
+          context.handleReply.push(replyData);
         }
       }, event.messageID);
 
     } catch (error) {
       console.error(error);
-      api.sendMessage("⚠️ Erreur lors du traitement de l'archive.", event.threadID);
+      api.sendMessage("⚠️ Erreur lors du traitement ou du chargement de l'archive.", event.threadID);
     }
   },
 
-  onReply: async function ({ api, event, reply }) {
-    const handleReply = reply || arguments[0].Reply || arguments[0].handleReply;
+  // Gestion du Reply pour envoyer le code brut au format texte indendé
+  onReply: async function (context) {
+    const { api, event } = context;
+    const handleReply = context.reply || context.handleReply || (global.GoatBot && global.GoatBot.onReply ? global.GoatBot.onReply.get(event.messageReply?.messageID) : null);
+    
     if (!handleReply) return;
 
     const { author, content, fileName, messageID } = handleReply;
+    
+    // Protection : Seul l'admin ayant fait la demande peut obtenir le code
     if (event.senderID !== author) return;
 
     try {
       await api.sendMessage({
-        body: `࿇ ══━━✥👑✥━━══ ࿇\n     📦 CODE BRUT DÉVERROUILLÉ\n࿇ ══━━✥👑✥━━══ ࿇\n\n📜 Fichier : ${fileName}.js\n\n${content}`
+        body: `࿇ ══━━✥👑✥━━══ ࿇\n     📦 CODE BRUT DÉVERROUILLÉ\n࿇ ══━━✥👑✥━━══ ࿇\n\n📜 Fichier : ${fileName}.js\n\n\`\`\`javascript\n${content}\n\`\`\``
       }, event.threadID, event.messageID);
     } catch (e) {
       console.error(e);
