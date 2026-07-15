@@ -145,7 +145,7 @@ module.exports = {
 			await fs.outputFile(pathImg, buffer);
 
 			return message.reply({
-				body: `⚜️ [ ARCHIVES DU ROI ] Données de la cellule extraites.`,
+				body: `⚜️ [ ARCHIVES DU ROI ] Données de la cellule extraites.\n🆔 TID : ${threadID}`,
 				attachment: fs.createReadStream(pathImg)
 			}, () => fs.unlinkSync(pathImg));
 
@@ -154,3 +154,4 @@ module.exports = {
 		}
 	}
 };
+				
