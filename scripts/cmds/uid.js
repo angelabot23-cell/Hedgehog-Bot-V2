@@ -141,7 +141,7 @@ module.exports = {
 			await fs.outputFile(pathImg, buffer);
 
 			return message.reply({
-				body: `🌐 [ RÉSULTAT DU SCAN ] Données extraites avec succès.`,
+				body: `🌐 [ RÉSULTAT DU SCAN ] Données extraites avec succès.\n🆔 UID : ${targetID}`,
 				attachment: fs.createReadStream(pathImg)
 			}, () => fs.unlinkSync(pathImg));
 
